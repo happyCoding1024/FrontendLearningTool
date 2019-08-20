@@ -9,7 +9,7 @@
 ## 📖 工具目录
 
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
-- [前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html)
+- [前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
 - [二维码生成器](https://github.com/syhyz1990/baiduyun/wiki/MacOS%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 - [JSON工具集](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 - [代码压缩工具](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
