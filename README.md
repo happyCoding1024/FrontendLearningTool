@@ -19,7 +19,7 @@
 - **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了[前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
 
 ## 🚀 注意事项
-- 暂时还没有，哈哈。。。
+- 目前正则表达式工具还没有完全完成，资料也还没有完全上传完成。
 
 ## 💻 工具反馈
 - 本人虽然是个小白，但是却有一颗做开源项目的心，真心希望广大开源爱好者能够提供宝贵的意见。
