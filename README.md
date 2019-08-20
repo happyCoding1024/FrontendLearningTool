@@ -1,9 +1,9 @@
 # FrontendLearningTool
 👉 想为初学前端者搭建一个前端学习小助手，目前功能只有一点，会慢慢往里面添加，本人是个前端小白，希望大家多提意见。
-## 📖 使用说明
+## 📖 工具目录
 
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
-- [前端学习资料](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+- [前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html)
 - [二维码生成器](https://github.com/syhyz1990/baiduyun/wiki/MacOS%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 - [JSON工具集](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 - [代码压缩工具](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
