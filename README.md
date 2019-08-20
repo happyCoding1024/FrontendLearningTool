@@ -16,7 +16,7 @@
 - [网页录屏工具](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 
 ## 🔔 更新日志
-- **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了前端学习资料(https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
+- **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了[前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
 
 ## ✨ 注意事项
 - 暂时还没有，哈哈。。。
