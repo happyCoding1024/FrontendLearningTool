@@ -5,4 +5,4 @@
   1. QQ：357378958
   2. github主页：https://github.com/happyCoding1024/FrontendLearningTool/issues
   - JQuery书单：
-  ![JQuery部分电子书列表](https://happycoding1024.github.io/FrontendLearningTool/img/JQuery电子书.png)
+  ![JQuery部分电子书列表](https://happycoding1024.github.io/FrontendLearningTool/img/电子书列表/JQuery电子书.png)
