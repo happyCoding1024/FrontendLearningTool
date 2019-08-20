@@ -1,5 +1,5 @@
 # FrontendLearningTool
-👉 想为初学前端者搭建一个前端学习小助手，目前功能只有一点，会慢慢往里面添加，本人是个前端小白，希望大家多提意见。
+👉 想为初学前端者搭建一个前端学习工具集，目前功能只有一点，会慢慢往里面添加，本人是个前端小白，希望大家多提意见。
 ## 📖 工具目录
 
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
