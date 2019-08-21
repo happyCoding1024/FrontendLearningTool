@@ -1,7 +1,7 @@
 # 前端学习资料
 
 ## 👻 使用说明
-- 本工具集现包含正则表达式测试工具和一些学习资料，通过下面的工具目录链接可进到相应的子目录，每个子目录下会有相应的使用说明。
+- 学习资料中除包含前端海量的经典电子书外，还包含Python，C，数据结构与算法等的相关资料，通过点击下面学习资料目录中的相应链接即可获取你感兴趣的资料。
 
 ## 📖 学习资料目录
 
@@ -18,10 +18,12 @@
 - [数据结构与算法](https://happycoding1024.github.io/FrontendLearningTool/file/数据结构与算法/数据结构与算法.html)
 - [程序员的职业素养](https://happycoding1024.github.io/FrontendLearningTool/file/程序员的职业素养/程序员的职业素养电子书.html)
 ## 🔔 更新日志
-- **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了[前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
-
+- **2019-08-21** : 新上传前端海量经典电子书，包括《JavaScript程序设计》，《JavaScript语言精粹》等等。
+<br>......
 ## 🚀 注意事项
-- 暂时还没有，哈哈。。。
+- 下载过程中遇到任何问题欢迎与我联系。
+QQ邮箱: 357378958@qq.com  
+[Github主页](https://github.com/happyCoding1024/FrontendLearningTool/issues):https://github.com/happyCoding1024/FrontendLearningTool/issues
 
 ## 💻 工具反馈
 - 本人虽然是个小白，但是却有一颗做开源项目的心，真心希望广大开源爱好者能够提供宝贵的意见。
