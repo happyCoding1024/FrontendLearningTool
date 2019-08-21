@@ -11,7 +11,7 @@
 - [JQuery](https://happycoding1024.github.io/FrontendLearningTool/file/JQuery/JQuery电子书.html)
 - [node](https://happycoding1024.github.io/FrontendLearningTool/file/node/node电子书.html)
 - [Ajax](https://happycoding1024.github.io/FrontendLearningTool/file/ajax/ajax.html)
-- [Web](https://happycoding1024.github.io/FrontendLearningTool/file/Web/Web电子书.html)
+- [Web](https://happycoding1024.github.io/FrontendLearningTool/file/Web/web电子书.html)
 - [Python](https://happycoding1024.github.io/FrontendLearningTool/file/Python/python电子书.html)
 - [C语言](https://happycoding1024.github.io/FrontendLearningTool/file/C/c.html)
 - [C++](https://happycoding1024.github.io/FrontendLearningTool/file/C++/C++.html)
