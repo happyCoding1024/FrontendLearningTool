@@ -5,18 +5,18 @@
 
 ## 📖 学习资料目录
 
-- [JS电子书](https://happycoding1024.github.io/FrontendLearningTool/file/JS电子书/JS电子书.md)
-- [CSS电子书](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html)
-- [HTML电子书](https://github.com/syhyz1990/baiduyun/wiki/MacOS%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [JQuery](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [node](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [Ajax](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [Web](https://github.com/syhyz1990/baiduyun/wiki/MacOS%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [Python](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
-- [C语言](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html)
+- [JS电子书](https://happycoding1024.github.io/FrontendLearningTool/file/JS电子书/JS电子书.html)
+- [CSS电子书](https://happycoding1024.github.io/FrontendLearningTool/file/CSS/CSS电子书.html)
+- [HTML电子书](https://happycoding1024.github.io/FrontendLearningTool/file/HTML/HTML电子书.html)
+- [JQuery](https://happycoding1024.github.io/FrontendLearningTool/file/JQuery/JQuery电子书.html)
+- [node](https://happycoding1024.github.io/FrontendLearningTool/file/node/node电子书.html)
+- [Ajax](https://happycoding1024.github.io/FrontendLearningTool/file/ajax/ajax.html)
+- [Web](https://happycoding1024.github.io/FrontendLearningTool/file/Web/Web电子书.html)
+- [Python](https://happycoding1024.github.io/FrontendLearningTool/file/Python/python电子书.html)
+- [C语言](https://happycoding1024.github.io/FrontendLearningTool/file/C/c.html)
 - [C++](https://happycoding1024.github.io/FrontendLearningTool/file/C++/C++.html)
-- [数据结构与算法](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
-- [程序员的职业素养](https://github.com/syhyz1990/baiduyun/wiki/Android%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+- [数据结构与算法](https://happycoding1024.github.io/FrontendLearningTool/file/数据结构与算法/数据结构与算法.html)
+- [程序员的职业素养](https://happycoding1024.github.io/FrontendLearningTool/file/程序员的职业素养/程序员的职业素养电子书.html)
 ## 🔔 更新日志
 - **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了[前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
 
