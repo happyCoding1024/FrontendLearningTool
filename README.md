@@ -1,4 +1,4 @@
-# FrontendLearningTool
+# FrontendLearning
 
 ## ✨ 工具初心
 - 自学前端之路不易，想为初学前端者搭建一个前端学习工具集，能够为初学前端者提供一点帮助，本人也是正在学习前端的小白，希望大家一起加油。
@@ -9,13 +9,14 @@
 ## 👻 使用说明
 - 本工具集现包含正则表达式测试工具和一些学习资料，通过下面的工具目录链接可进到相应的子目录，每个子目录下会有相应的使用说明。
 
-## 📖 工具目录
+## 📖 目录
 
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
 - [前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
-
+- [学习笔记]()
 ## 🔔 更新日志
 
+- **2019-10-08** : 上传ES6学习笔记
 - **2019-08-21** : 新上传前端经典电子书，如《JavaScript高级程序设计》，《JavaScript语言精粹》等.
 <br>......
 - **2019-08-20** : 前端学习工具仓库创建，上传[正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)此工具能够实现基本的正则表达式匹配和替换，并且添加了一些常用的正则表达式方便前端初学者参考学习。此外还上传了[前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/src/frontendLearningMaterial.html) ，包括前端经典书籍，前端学习视频等。
