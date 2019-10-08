@@ -1,4 +1,4 @@
-# FrontendLearning
+# FrontendLearningTool
 
 ## ✨ 工具初心
 - 自学前端之路不易，想为初学前端者搭建一个前端学习工具集，能够为初学前端者提供一点帮助，本人也是正在学习前端的小白，希望大家一起加油。
@@ -11,9 +11,10 @@
 
 ## 📖 目录
 
+- [程序员在线工具集](https://tool.lu/)
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
 - [前端学习资料](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
-- [学习笔记]()
+- [学习笔记](https://happycoding1024.github.io/FrontendLearningTool/file/学习笔记/ES6)
 ## 🔔 更新日志
 
 - **2019-10-08** : 上传ES6学习笔记
