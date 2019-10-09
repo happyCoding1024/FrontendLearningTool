@@ -14,8 +14,8 @@
 - [程序员在线工具集](https://tool.lu/)
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
 - [前端电子书](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
-- [学习笔记](https://github.com/happyCoding1024/FrontendLearningTool/tree/master/file/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ES6)
-
+- [前端学习笔记](https://github.com/happyCoding1024/FrontendLearningTool/tree/master/file/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+- [前端学习教程]() 
 ## 🔔 更新日志
 
 - **2019-10-08** : 上传ES6学习笔记
