@@ -15,7 +15,8 @@
 - [前端实用工具集](https://happyCoding1024.github.io/FrontendLearningTool/file/前端实用工具集/前端实用工具集.html)
 
 ## 🔔 更新日志
-
+ 
+- **2019-10-09** : 上传前端实用工具集，前端学习教程...
 - **2019-10-08** : 上传ES6学习笔记
 - **2019-08-21** : 新上传前端经典电子书，如《JavaScript高级程序设计》，《JavaScript语言精粹》等.
 <br>......
