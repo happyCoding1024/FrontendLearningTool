@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="769b90c7-3201-4d0d-a2c7-296223d12a1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端学习笔记/前端学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/前端学习笔记/前端学习笔记.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -207,7 +207,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/前端学习教程" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -256,14 +256,7 @@
       <workItem from="1570679987392" duration="6912000" />
       <workItem from="1570868198405" duration="523000" />
       <workItem from="1570869518937" duration="44000" />
-      <workItem from="1570948368437" duration="4151000" />
-    </task>
-    <task id="LOCAL-00037" summary="update">
-      <created>1566346480861</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1566346480861</updated>
+      <workItem from="1570948368437" duration="4314000" />
     </task>
     <task id="LOCAL-00038" summary="update">
       <created>1566346689858</created>
@@ -601,15 +594,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570956476790</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="update">
+      <created>1570956573857</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1570956573857</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47370000" />
+    <option name="totallyTimeSpent" value="47533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
