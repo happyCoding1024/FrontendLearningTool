@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="769b90c7-3201-4d0d-a2c7-296223d12a1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/前端学习教程/前端学习网站.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/前端学习教程/前端学习教程.md" beforeDir="false" afterPath="$PROJECT_DIR$/前端学习教程/前端学习教程.md" afterDir="false" />
-    </list>
+    <list default="true" id="769b90c7-3201-4d0d-a2c7-296223d12a1b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,12 +13,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <first_editor relative-caret-position="59">
+                <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/前端学习笔记/前端学习笔记.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="132">
+                <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               </first_editor>
               <second_editor />
             </state>
@@ -36,16 +44,6 @@
               <first_editor relative-caret-position="66">
                 <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
               </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file/前端学习笔记/ES6/let和const总结(ES6).md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -201,11 +199,6 @@
               <item name="FrontendLearningTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="FrontendLearningTool" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="FrontendLearningTool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontendLearningTool" type="462c0819:PsiDirectoryNode" />
-              <item name="前端学习教程" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -264,21 +257,7 @@
       <workItem from="1570679987392" duration="6912000" />
       <workItem from="1570868198405" duration="523000" />
       <workItem from="1570869518937" duration="44000" />
-      <workItem from="1570948368437" duration="252000" />
-    </task>
-    <task id="LOCAL-00031" summary="update">
-      <created>1566345279711</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1566345279711</updated>
-    </task>
-    <task id="LOCAL-00032" summary="update">
-      <created>1566345386197</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1566345386197</updated>
+      <workItem from="1570948368437" duration="509000" />
     </task>
     <task id="LOCAL-00033" summary="update">
       <created>1566345671761</created>
@@ -609,14 +588,29 @@
       <option name="project" value="LOCAL" />
       <updated>1570948388215</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="update">
+      <created>1570948624109</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1570948624109</updated>
+    </task>
+    <task id="LOCAL-00081" summary="update">
+      <created>1570948833914</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1570948833914</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43471000" />
+    <option name="totallyTimeSpent" value="43728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15252976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -666,7 +660,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/JS部分电子书列表.png" />
     <entry file="file://$PROJECT_DIR$/file/JQuery/JQuery电子书列表.png" />
     <entry file="file://$PROJECT_DIR$/file/Web/web.png">
       <provider selected="true" editor-type-id="images" />
@@ -1027,8 +1020,18 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <first_editor relative-caret-position="59">
+            <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/前端学习笔记/前端学习笔记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="132">
+            <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
