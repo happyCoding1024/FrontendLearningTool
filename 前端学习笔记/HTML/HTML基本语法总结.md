@@ -287,7 +287,7 @@ UTF-8则包含全世界所有国家需要用到的字符
 
 单词缩写：  horizontal  横线    [ˌhɔrəˈzɑntl]    同上
 
-在网页中常常看到一些水平线将段落与段落之间隔开，使得文档结构清晰，层次分明。这些水平线可以通过插入图片实现，也可以简单地通过标签来完成，<hr />就是创建横跨网页水平线的标签。其基本语法格式如下：
+在网页中常常看到一些水平线将段落与段落之间隔开，使得文档结构清晰，层次分明。这些水平线可以通过插入图片实现，也可以简单地通过标签来完成，`<hr />`就是创建横跨网页水平线的标签。其基本语法格式如下：
 
 ```html
 <hr />是单标签
@@ -322,10 +322,6 @@ span, 跨度，跨距；范围
 
 
 
-## 文本格式化标签(熟记)
-
-在网页中，有时需要为文字设置粗体、斜体或下划线效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013195659423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
 ## 标签属性
 属性就是特性 比如 手机的颜色 手机的尺寸 ，总结就是手机的。。
 
@@ -369,14 +365,13 @@ span, 跨度，跨距；范围
 
 单词缩写：   image  图像
 
-HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显示图像就需要使用图像标签，接下来将详细介绍图像标签<img />以及和他相关的属性。其基本语法格式如下：
+HTML网页中任何元素的实现都要依靠HTML标签，要想在网页中显示图像就需要使用图像标签，接下来将详细介绍图像标签`<img />`以及和他相关的属性。其基本语法格式如下：
 
 该语法中src属性用于指定图像文件的路径和文件名，他是img标签的必需属性。
 
 ```html
 <img src="图像URL" />
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013195849603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
 ## 链接标签(重点)
 
 单词缩写：  anchor 的缩写  [ˈæŋkə(r)] 。基本解释 锚, 铁锚 的
@@ -395,7 +390,7 @@ target：用于指定链接页面的打开方式，其取值有_self和_blank两
 
 1.外部链接 需要添加 http:// www.baidu.com
 
-2.内部链接 直接链接内部页面名称即可 比如 < a href="index.html"> 首页 </a >
+2.内部链接 直接链接内部页面名称即可 比如`` < a href="index.html">`` 首页 `</a >`
 
 3.如果当时没有确定链接目标时，通常将链接标签的href属性值定义为“#”(即href="#")，表示该链接暂时为一个空链接。
 
@@ -421,9 +416,6 @@ base 可以设置整体链接的打开状态
 base 写到  `<head>  </head>`  之间
 
 把所有的连接 都默认添加 target="_blank"
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013200053292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
-##  特殊字符标签 （理解）![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013200139396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
-
 ## 注释标签
 
 在HTML中还有一种特殊的标签——注释标签。如果需要在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字，就需要使用注释标签。其基本语法格式如下：
@@ -434,12 +426,6 @@ base 写到  `<head>  </head>`  之间
 ```
 
 注释内容不会显示在浏览器窗口中，但是作为HTML文档内容的一部分，也会被下载到用户的计算机上，查看源代码时就可以看到。
-
-注释重要性：
-
-
-
-<img src="media/zs.png" />
 
 ## 路径(重点、难点)
 
@@ -548,17 +534,9 @@ base 写到  `<head>  </head>`  之间
 2. <td></td>标签，他就像一个容器，可以容纳所有的元素
 ```
 
-
-
-### 表格属性
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013200840886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
-三参为0    
-即：`border  cellpadding  cellspacing`  为  0
-
 ### 表头标签
 
 表头单元格一般位于表格的第一行或第一列，其文本加粗居中，如下图所示，即为设置了表头的表格。设置表头非常简单，只需用表头标签&lt;th&gt;</th&gt;替代相应的单元格标签&lt;td&gt;</td&gt;即可。 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191013200929659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk5MzE4,size_16,color_FFFFFF,t_70)
 
 ### 表格结构
 
