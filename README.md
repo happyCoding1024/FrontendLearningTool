@@ -15,6 +15,7 @@
 - [前端学习教程](https://happyCoding1024.github.io/FrontendLearningTool/file/前端学习教程/前端学习教程.html) 
 - [前端实用工具集](https://happyCoding1024.github.io/FrontendLearningTool/file/前端实用工具集/前端实用工具集.html)
 - [前端重要面经](https://happyCoding1024.github.io/FrontendLearningTool/file/前端面经/前端面经.html)
+- [前端学习网站汇总](https://happyCoding1024.github.io/FrontendLearningTool/file/前端学习教程/前端学习网站.html)
 
 ## 💻 联系我
 - 如果遇到任何问题欢迎与我联系。
