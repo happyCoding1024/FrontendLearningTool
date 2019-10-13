@@ -10,9 +10,9 @@
 
 - [程序员在线工具集](https://tool.lu/)
 - [正则表达式工具](https://happycoding1024.github.io/FrontendLearningTool/src/regulationExpression.html)
-- [前端电子书](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
-- [前端学习笔记](https://blog.csdn.net/qq_43199318)
-- [前端学习教程](https://happyCoding1024.github.io/FrontendLearningTool/file/前端学习教程/前端学习教程.html) 
+- [电子书下载](https://happycoding1024.github.io/FrontendLearningTool/help/frontendLearningMaterial.html)
+- [学习笔记](https://blog.csdn.net/qq_43199318)
+- [学习教程和资源](https://happyCoding1024.github.io/FrontendLearningTool/file/前端学习教程/前端学习教程.html) 
 - [前端实用工具集](https://happyCoding1024.github.io/FrontendLearningTool/file/前端实用工具集/前端实用工具集.html)
 - [前端重要面经](https://happyCoding1024.github.io/FrontendLearningTool/file/前端面经/前端面经.html)
 - [前端学习网站汇总](https://happyCoding1024.github.io/FrontendLearningTool/前端学习教程/前端学习网站.html)
