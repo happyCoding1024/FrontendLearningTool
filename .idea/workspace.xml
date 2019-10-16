@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="769b90c7-3201-4d0d-a2c7-296223d12a1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/前端学习教程/前端学习网站.md" beforeDir="false" afterPath="$PROJECT_DIR$/前端学习教程/前端学习网站.md" afterDir="false" />
-    </list>
+    <list default="true" id="769b90c7-3201-4d0d-a2c7-296223d12a1b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -44,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/前端学习教程/前端学习网站.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-2068">
-                <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <first_editor relative-caret-position="330">
+                <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
               </first_editor>
               <second_editor />
             </state>
@@ -261,14 +258,7 @@
       <workItem from="1570948368437" duration="4314000" />
       <workItem from="1570956762733" duration="267000" />
       <workItem from="1570959065827" duration="1214000" />
-      <workItem from="1571232745037" duration="671000" />
-    </task>
-    <task id="LOCAL-00039" summary="update">
-      <created>1566346775263</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1566346775263</updated>
+      <workItem from="1571232745037" duration="1358000" />
     </task>
     <task id="LOCAL-00040" summary="update">
       <created>1566346954197</created>
@@ -606,11 +596,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570956776003</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="update">
+      <created>1571233426912</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1571233426913</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49685000" />
+    <option name="totallyTimeSpent" value="50372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1034,8 +1031,8 @@
     <entry file="file://$PROJECT_DIR$/前端学习教程/前端学习网站.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-2068">
-            <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <first_editor relative-caret-position="330">
+            <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
           </first_editor>
           <second_editor />
         </state>
