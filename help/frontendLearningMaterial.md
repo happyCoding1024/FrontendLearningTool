@@ -20,15 +20,9 @@
 ## 🔔 更新日志
 - **2019-08-21** : 新上传前端海量经典电子书，包括《JavaScript程序设计》，《JavaScript语言精粹》等等。
 <br>......
-## 🚀 注意事项
-- 下载过程中遇到任何问题欢迎与我联系。
-QQ邮箱: 357378958@qq.com  
-[Github主页](https://github.com/happyCoding1024/FrontendLearningTool/issues):https://github.com/happyCoding1024/FrontendLearningTool/issues
+## 💻 联系我
+- 前端小白一枚，如果发现任何问题欢迎与我联系哦，感激不尽。
+- [联系方式](https://happyCoding1024.github.io/FrontendLearningTool/file/联系方式/联系方式.html)
 
-## 💻 工具反馈
-- 本人虽然是个小白，但是却有一颗做开源项目的心，真心希望广大开源爱好者能够提供宝贵的意见。
-- [反馈问题](https://github.com/happyCoding1024/FrontendLearningTool/issues)
 
-## 📜 侵权说明 
-- 此工具仅限前端初学者学习使用，不得用于非法牟利，如产生法律纠纷与此工具作者无关，本工具是本人学习前端的过程中逐步完成，如有侵权，请与我联系。
-- 邮箱：357378958@qq.com
+
