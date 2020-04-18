@@ -24,18 +24,13 @@
  - [MDN](https://developer.mozilla.org/zh-CN/) 
  - [W3School](https://www.w3school.com.cn/) 
  - [百度前端技术学院](http://ife.baidu.com/) 
+ - [前端学习网站汇总](/前端学习教程/前端学习网站.html)
 
 ### 电子书
 
 [电子书下载](/help/frontendLearningMaterial.html)
 
-### 学习网站
-
-[前端学习网站汇总](/前端学习教程/前端学习网站.html)
-
 ### 视频资源
-
-> 视频资源均来源于网络，如有侵权，立即删除。
 
 #### 慕课网资源
 
