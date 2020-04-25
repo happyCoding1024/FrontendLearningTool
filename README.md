@@ -33,7 +33,8 @@ typora 软件截图
  - [MDN](https://developer.mozilla.org/zh-CN/) 
  - [W3School](https://www.w3school.com.cn/) 
  - [百度前端技术学院](http://ife.baidu.com/) 
- - [前端学习网站汇总](/前端学习教程/前端学习网站.html)
+ - [前端学习网站汇总](/教程资源/前端学习网站.md)
+ - [Web前端知识体系整理](/教程资源/Web前端知识体系整理.md)
 
 ### 电子书
 
