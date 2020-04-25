@@ -37,7 +37,7 @@ typora 软件截图
 
 ### 电子书
 
-[电子书下载](/doc/use/frontendLearningMaterial.html)
+[电子书下载](/doc/use/frontendLearningMaterial.md)
 
 ### 视频资源
 
@@ -49,7 +49,7 @@ typora 软件截图
 
 如果您发现任何问题，希望可以抽时间告诉作者，感谢您的贡献，非常感谢。
 
-如果您感觉对您有一点点帮助，欢迎 star 鼓励一下作者，非常感谢。
+如果您感觉对您有一点点帮助，欢迎 **star** 鼓励一下作者，非常感谢。
 
 联系方式：
 
