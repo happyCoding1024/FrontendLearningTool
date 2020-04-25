@@ -6,13 +6,23 @@
 
 > 志存高远，厚积薄发。
 
-初学前端，记录所学，所思，所得，和大家分享前端（不止前端）学习路上的点点滴滴，做个终身学习者。
+初学前端，记录所学，所思，所得，和大家分享前端（不止前端）学习路上的点点滴滴。
 
 ## 文章
 
-> 原创，转载文章(均已注明原文链接)。
+记录了学习过程中的一些笔记和在博客园上发表过的文章，其中有些文章是原创，有些文章是转载，转载文章均已注明原文链接。
 
-[博客笔记汇总]()
+查看方式
+
+- 直接在仓库中在相应的文件夹下进行查看
+
+- 将此仓库 clone 到本地，然后使用 Markdown 编辑软件进行阅读。
+
+> 强烈推荐一款 Markdown编辑软件 typora ，不仅免费，而且实用，方便，最重要的是颜值还高，再搭配 Gitbook，写完直接就可以当做书来看了，作者十分喜欢 Gitbook 和 typora 这两个黄金搭档。
+
+typora 软件截图
+
+![](https://raw.githubusercontent.com/happyCoding1024/image-hosting/master/img/20200425181414.png)
 
 ## 前端教程及资源
 
@@ -27,46 +37,29 @@
 
 ### 电子书
 
-[电子书下载](/help/frontendLearningMaterial.html)
+[电子书下载](/doc/use/frontendLearningMaterial.html)
 
 ### 视频资源
 
-#### 慕课网资源
+[慕课网资源](/doc/use/moocLesson.md)
 
-[编程必备基础知识 计算机组成原理+操作系统+计算机网络](https://pan.baidu.com/s/1F4OLRZs3hcs3mSYLyEzxKw)： f7we
-
-[Javascript 设计模式系统讲解与应用](https://pan.baidu.com/s/1wBC_pNrepyvak8Sw99hDjA)：09ly
-
-[Vue.js 源码全方位深入解析](https://pan.baidu.com/s/1RSFXavKsdlvXm5SmCuA1mg)：xwxh
-
-[React源码深度解析](https://pan.baidu.com/s/1arEN9-z8-yPUnE_Ij4IVow )：lzn3 
-
-#### 黑马
-
-[前端就业班](https://pan.baidu.com/s/1xGFfDXa5CDFEVlCWl0cjNg)：ay87
-
-[Python就业班](https://pan.baidu.com/s/14ySRHPPl-5jE7Ee116Ww_Q)：kvda
-
-### 程序员加油站
-
-- [程序员在线工具集](https://tool.lu/)
-
-### 开源项目
-
-### 其它
-
-## 面试
-
-### 面经
-
-### 简历
-
-## TodoList
+[黑马](/doc/use/heimaLesson.md)
 
 ## 联系作者
+
+如果您发现任何问题，希望可以抽时间告诉作者，感谢您的贡献，非常感谢。
+
+如果您感觉对您有一点点帮助，欢迎 star 鼓励一下作者，非常感谢。
+
+联系方式：
 
 - 在 [github issues](https://github.com/happyCoding1024/FrontendLearningTool/issues) 提交问题
 - [博客园 codingOrange](https://www.cnblogs.com/zhangguicheng/)
 
 - [b站直播前端学习(一天12小时以上)](https://space.bilibili.com/421338049)
+
+
+
+
+
 

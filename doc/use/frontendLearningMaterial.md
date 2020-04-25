@@ -4,6 +4,8 @@
 
 - 学习资料中除包含前端海量的经典电子书外，还包含Python，C，数据结构与算法等的相关资料，通过点击下面学习资料目录中的相应链接即可获取你感兴趣的资料。
 
+- 如果链接有失效的，可以和作者联系(联系方式在README.md最下方)。
+
 ## 📖 目录
 
 - [JS电子书](https://happycoding1024.github.io/FrontendLearningTool/file/JS电子书/JS电子书.html)
