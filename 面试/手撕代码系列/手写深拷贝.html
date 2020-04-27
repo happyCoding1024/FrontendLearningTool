@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>手写深拷贝</title>
+  </head>
+  <body>
+    <script>
+      function deepClone(obj={}) {
+        // 递归终止条件
+        if (typeof obj === 'object' || typeof obj === null) {
+          return obj
+        }
+        // 临时变量，根据 obj 初始化 result。
+        let result = obj instanceof Object ? {} : []
+        
+        // 遍历对象中的每一个自有属性
+        for (key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            result[key] = deepClone(obj)
+          }
+        }
+
+        return result
+      }
+
+      // 测试代码
+      const obj1 = {
+        name: 'zhangsan',
+        address: {
+          city: 'nanjing',
+        }
+      }
+      const obj2 = deepClone(obj1) 
+      console.log(obj2)
+    </script>
+  </body>
+</html>
