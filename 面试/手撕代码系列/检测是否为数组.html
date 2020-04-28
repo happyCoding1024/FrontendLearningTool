@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>检测数组</title>
+</head>
+<body>
+  <script>
+    const arr = [1, 2, 3]
+    // 1. instanceof
+    console.log(arr instanceof Array) 
+    // 2. Array.isArray(arr)
+    console.log(Array.isArray(arr))
+    // 3. 构造函数
+    console.log(arr.constructor === Array)
+    // 4. Object 原型
+    console.log(Object.prototype.toString.call(arr) === '[object Array]')
+  </script>
+  
+</body>
+</html>

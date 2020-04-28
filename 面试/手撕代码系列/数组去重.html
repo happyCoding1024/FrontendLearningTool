@@ -1,0 +1,34 @@
+<!DOCTYPE html> <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组去重</title>
+</head>
+<body>
+  <script>
+    /* ES6 Set 去重 */
+    // function unique(arr) {
+    //   return [...new Set(arr)]
+    // }
+    // // 问题：不能去重空对象，因为 Set 内部判断的原理是 `===`，{} === {} 返回 false
+
+    /* 两次 for 循环结合 splice */
+    function unique(arr) {
+      for (let i = 0, len = arr.length; i < len; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] === arr[j]) {
+            arr.splice(j, 1)
+            j--
+          }
+        }
+      }
+      return arr
+    }
+
+    // 测试代码
+    const arr = [1, 2, 2, 3, 4, 4, 5]
+    console.log(unique(arr))
+
+  </script>
+</body>
+</html>

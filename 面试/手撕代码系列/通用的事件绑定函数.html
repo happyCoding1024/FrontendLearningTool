@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通用的事件绑定函数</title>
+</head>
+<body>
+  <div id="div">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <button>submit</button>
+  </div>
+  <script>
+    function myBind (elem, type, selector, fn) {
+      // 判断是否为事件代理(事件委托),fn没有值说明不是事件代理,此时selector是传递进来的函数
+      if (!fn) {
+        fn = selector
+        selector = null
+      }
+      elem.addEventListener(type, (event) => {
+        const target = event.target;
+        if (selector) {
+          if (target.matches(selector)) {
+            fn.call(target, event)
+          }
+        } else {
+          fn.call(target, event)
+        }
+      })
+    }
+
+    // 测试代码
+    const div = document.getElementById('div');
+    myBind(div, 'click', 'a', function(event) {
+      alert(this.innerHTML);
+    });
+  </script>
+</body>
+</html>

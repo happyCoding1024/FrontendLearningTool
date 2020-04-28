@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件代理</title>
+</head>
+<body>
+  <div id="div">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <button>submit</button>
+  </div>
+  <script>
+    const div = document.getElementById('div')
+    div.addEventListener('click', (e) => {
+      e.preventDefault()
+      // 只有点击 a 元素时才会执行打印
+      if (e.target.matches('a')) {
+        console.log(e.target)
+      }
+    })
+    
+  </script>
+</body>
+</html>
