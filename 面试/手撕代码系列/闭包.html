@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 闭包指的是能够访问另一个函数作用域中的函数。
+
+    // 闭包使得我们可以在函数的外部访问函数内部的变量
+    
+    // function fn1 () {
+    // let a = 1
+    // return function fn2 () {
+    //     console.log('fn1 中的 a = ', a)
+    //   }
+    // }
+
+    // let result = fn1()
+    // result() // fn1 中的 a = 1
+
+    // 闭包的主要用处在于能够隐藏数据
+    function cache () {
+      let data = {}
+      return {
+        get(key) {
+          return data.key
+        },
+        set(key, val) {
+          data.key = val
+        }
+      }
+    }
+
+    // 使用 get 和 set 可以访问和修改 data 对象但是拿不到 data 对象
+    const result = cache()
+    result.set('a', 1)
+    console.log(result.get('a'))
+
+    
+    // 闭包带来的问题
+
+    // 再来分析一下上面的这段代码，一般情况下当一个函数运行完成之后这个函数内部的变量就会被销毁，但是在使用闭包后，cache 函数内部的变量 data 并不会被销毁而是永远保留在内存中。
+
+    // 这是因为外部的 result 引用着返回的对象，对象中又有 get 和 set 函数里面使用着 data，所以当 cache 运行完成之后也是有变量在引用它，因此并不会被垃圾回收机制回收。
+
+    // 所以要在闭包使用完成后及时手动地释放引用，例如将上面的 result 赋值为 null，这个时候 cache 函数内部的 data 对象就没有变量再去引用它了，因此会被垃圾回收机制回收。
+
+  </script>
+</body>
+</html>
