@@ -29,31 +29,69 @@
         status = compareObject(obj1[key], obj2[key])
         // 关键代码，当 status 为 false 时下面就不用再进行判断了，说明两个对象的内容并不相同
         // 如果没有下面这条语句，那么只要对象底层的内容是相同的那么就返回 true
-        // if (!status) {
-        //   break
-        // }
+        if (!status) {
+          break
+        }
       }
       // 每次 compareObject 执行的返回结果
       return status
     }
     const obj1 = {
-      a: 1,
-      b: {
-        c: 2,
-        d: {
-          e: 4
-        }
-      }
-    },
-    obj2 = {
-      a: 1,
-      b: {
-        c: 3,
-        d: {
-          e: 4
-        }
-      }
-    }
+        'q': 'cnblogs.com/zhangguicheng/',
+        'w': 'https://space.bilibili.com/421338049',
+        'e': 'github.com/happyCoding1024',
+        'r': 'www.nowcoder.com',
+        't': 'leetcode-cn.com',
+        'y': 'developer.mozilla.org/zh-CN',
+        'u': 'www.imooc.com/',
+        'i': 'www.jianshu.com/',
+        'o': 'www.w3school.com.cn',
+        'p': 'www.zhihu.com',
+        'a': 'segmentfault.com',
+        's': 'juejin.im',
+        'd': 'www.csdn.net/',
+        'f': 'www.qq.com',
+        'g': 'www.ruanyifeng.com/',
+        'h': 'www.baidu.com',
+        'j': 'jianshu.com',
+        'k': 'dev.mysql.com/',
+        'l': 'www.cnki.net/',
+        'z': 'cn.vuejs.org/',
+        'x': 'reactjs.org/',
+        'c': 'www.babeljs.cn/',
+        'v': 'www.iconfont.cn/',
+        'b': 'webpack.js.org/',
+        'n': 'jquery.com/',
+        'm': 'regexper.com/'
+      };
+    const obj2 = {
+        'q': 'cnblogs.com/zhangguicheng/',
+        'w': 'https://space.bilibili.com/421338049',
+        'e': 'github.com/happyCoding1024',
+        'r': 'www.nowcoder.com',
+        't': 'leetcode-cn.com',
+        'y': 'developer.mozilla.org/zh-CN',
+        'u': 'www.imooc.com/',
+        'i': 'www.jianshu.com/',
+        'o': 'www.w3school.com.cn',
+        'p': 'www.zhihu.com',
+        'a': 'segmentfault.com',
+        's': 'juejin.im',
+        'd': 'www.csdn.net/',
+        'f': 'www.qq.com',
+        'g': 'www.ruanyifeng.com/',
+        'h': 'www.baidu.com',
+        'j': 'jianshu.com',
+        'k': 'dev.mysql.com/',
+        'l': 'www.cnki.net/',
+        'z': 'cn.vuejs.org/',
+        'x': 'reactjs.org/',
+        'c': 'www.babeljs.cn/',
+        'v': 'www.iconfont.cn/',
+        'b': 'webpack.js.org/',
+        'n': 'jquery.com/',
+        'm': 'regexper.com/'
+      };
     console.log(compareObject(obj1, obj2))
   </script>
 </body>
