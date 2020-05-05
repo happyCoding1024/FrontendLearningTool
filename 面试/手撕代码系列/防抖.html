@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id='input'>
+  <script>
+    // 防抖：事件触发后隔一段时间后如果该事件不在触发的状态那么才执行事件处理函数
+    // 问题：下面这样的写法如果用户需要向 fn 中传递实参应该怎样实现
+    // 下面箭头函数中的 this 为什么会是 <input type="text" id='input'> 
+    function debounce (fn, delay) {
+      let timer = null
+      return function () {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          // 调用用户传递进来的 fn 函数
+          fn.apply(this, arguments)
+          console.log(this) // 结果为 <input type="text" id='input'>
+          // 将 timer 赋值为 null，不能再执行上面的 clearTimeout
+          timer = null
+        }, delay)
+      } 
+    }
+    const input = document.getElementById('input')
+    input.addEventListener('keyup', debounce(function () {
+      console.log(input.value)
+    }, 500))
+  </script>  
+</body>
+</html>
