@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>节流</title>
+</head>
+<body>
+  <div id="div" draggable="true">drag</div>
+  <script>
+    // 节流
+    // 产品经理提出的需求：在用户拖动页面上的元素时要能实时显示元素的位置
+    // 防抖肯定不能满足要求，那么我们可以在事件执行时每隔多长时间执行一次，可以让这个时间比较短，以至于人眼不能分辨出来
+    function throttle (fn, delay) {
+      let timer = null
+      return function () {
+        if (timer) {
+          return 
+        }
+        timer = setTimeout(() => {
+          fn.apply(this, arguments)
+          // timer 为 null 时，启动一个定时任务
+          timer = null
+        }, delay)
+      }
+    } 
+
+    // 验证代码
+    const div = document.getElementById('div')
+    div.addEventListener('drag', throttle(function (e) {
+      console.log(e.offsetX, e.offsetY)
+    }, 1000))
+    
+  </script>
+</body>
+</html>

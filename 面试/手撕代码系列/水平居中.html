@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平居中</title>
+</head>
+<body>
+  <!-- 父元素是块级元素，子元素时inline或inline-block元素或文字时，给父元素加 `text-align: center` 可以实现子元素水平居中。 -->
+  <section>
+    <style>
+      .text-align .container {
+        text-align: center;
+      }
+    </style>
+    <h1>text-align: center</h1>
+    <article class="text-align">
+      <!-- text-align 父元素是块级元素，子元素时inline或inline-block元素或文字都可以实现水平居中 -->
+      <div class="container">
+        <!-- 我要水平居中 -->
+        <!-- <img src="../美团一面.png" alt=""> -->
+        <a href="#">我要水平居中</a>
+      </div>
+    </article>
+  </section>
+  
+  <!-- 对于块级元素(必须设置宽度，否则就会是屏幕的宽度)然后给父元素加 margin: 0 auto; -->
+  <section>
+    <style>
+      .margin .container {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        margin: 0 auto;
+      }
+    </style>
+    <h1>margin: 0 auto;</h1>
+    <article class="margin">
+      <!-- text-align 父元素是块级元素，子元素时inline或inline-block元素或文字都可以实现水平居中 -->
+      <div class="container">
+      </div>
+    </article>
+  </section>
+
+  <!-- 相对定位 -->
+  <section>
+    <style>
+      .relative .container {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        position: relative;
+        left: 50%;
+        /* margin-left: -50px; */ 
+        transform: translateX(-50%);
+      }
+    </style>
+    <h1>相对定位</h1>
+    <article class="relative">
+      <div class="container">
+      </div>
+    </article>
+  </section>
+
+  <!-- 绝对定位 -->
+  <section>
+    <style>
+      .absolute .container {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        position: absolute;
+        left: 50%;
+        /* margin-left: -50px; */ 
+        transform: translateX(-50%);
+      }
+    </style>
+    <h1>绝对定位</h1>
+    <article class="absolute">
+      <div class="container">
+      </div>
+    </article>
+  </section>
+</body>
+</html>

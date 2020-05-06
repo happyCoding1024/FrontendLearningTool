@@ -9,10 +9,10 @@
     <script>
       function deepClone(obj={}) {
         // 递归终止条件
-        if (typeof obj === 'object' || typeof obj === null) {
+        if (typeof obj === 'object' || obj === null) {
           return obj
         }
-        // 临时变量，根据 obj 初始化 result。
+        // 临时变量，根据 obj 初始化 result
         let result = obj instanceof Object ? {} : []
         
         // 遍历对象中的每一个自有属性

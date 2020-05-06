@@ -6,28 +6,49 @@
 </head>
 <body>
   <script>
-    /* ES6 Set 去重 */
+    /* 方法一：ES6 Set 去重 */
     // function unique(arr) {
     //   return [...new Set(arr)]
     // }
-    // // 问题：不能去重空对象，因为 Set 内部判断的原理是 `===`，{} === {} 返回 false
+    // const obj = {
+    //   a: 1
+    // }
+    // console.log(unique([{a: 1}, {a: 1}, NaN, NaN]))
+    // // 问题：Set 内部判断的原理是 `===`，任意两个对象直接量之间都是不相等的，即使内容相同，还有 NaN 也不能去重
 
-    /* 两次 for 循环结合 splice */
+    /* 方法二：两次 for 循环结合 splice */
+    // function unique(arr) {
+    //   for (let i = 0; i < arr.length; i++) {
+    //     for (let j = i + 1; j < arr.length; j++) {
+    //       if (arr[i] === arr[j]) {
+    //         arr.splice(j, 1)
+    //         j--
+    //       }
+    //     }
+    //   }
+    //   return arr
+    // }
+
+    /* 方法三：利用对象属性的唯一性*/
     function unique(arr) {
+      let obj = {}
+      let newArr = []
       for (let i = 0, len = arr.length; i < len; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-          if (arr[i] === arr[j]) {
-            arr.splice(j, 1)
-            j--
-          }
+        // 这个地方之前有些不理解，不是只有 Map 数据结构才能将对象作为属性吗？
+        // 实际上这里进行了隐式类型转换，调用了 toString 方法，将对象转换为了字符串的形式。
+        if(!obj[arr[i]]) {
+          obj[arr[i]] = 1 // 随便一个值
+          newArr.push(arr[i])
         }
       }
-      return arr
+      return newArr
     }
 
-    // 测试代码
-    const arr = [1, 2, 2, 3, 4, 4, 5]
+    // // 测试代码
+    const arr = [1, 2, 2, 3, 4, 4, 5, {a: 1}, {a: 1}]
     console.log(unique(arr))
+
+
 
   </script>
 </body>
