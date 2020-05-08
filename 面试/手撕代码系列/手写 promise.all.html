@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写promise.all方法</title>
+</head>
+<body>
+  <script>
+    function promiseAll (arr) {
+      if (!isArray(arr)) {
+        throw new TypeError('You must pass array')
+      }
+      let result = []
+      let count = 0
+      arr.map((item, i) => {
+        item.then((res) => {
+          result[i] = res
+          count++
+          if (count === arr.length) {
+            resolve(result)
+          }
+        }).catch((e) => {
+          reject(new Error('fail'))
+        })
+      })
+    }
+  </script>
+</body>
+</html>

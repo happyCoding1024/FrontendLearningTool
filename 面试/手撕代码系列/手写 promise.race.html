@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写promise.race方法</title>
+</head>
+<body>
+  <script>
+    function promiseRace (arr) {
+      if (!Array.isArray(arr)) {
+        console.log('You should pass an array')
+      }
+      return new Promise ((resolve, reject) => {
+        arr.forEach((item, i) => {
+          item.then(res => {
+            resolve(res)
+          }).catch(err => {
+             reject(err)
+          })
+        })
+      }) 
+    }
+  </script>
+</body>
+</html>
