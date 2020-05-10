@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扁平化数组</title>
+</head>
+<body>
+  <script>
+
+    // 利用 reduce
+    // function flatten(arr) {  
+    //   return arr.reduce((result, item)=> {
+    //     // 递归终止条件 Array.isArray(item) ? flatten(item) : item
+    //     return result.concat(Array.isArray(item) ? flatten(item) : item);
+    //   }, []);
+    // }
+
+    //  toString & split
+    // function flatten (arr) {
+    //   return arr.toString().split(',').map(item => {
+    //     return parseInt(item)
+    //   })
+    // }
+
+    // join & split
+    // function flatten (arr) {
+    //   return arr.join(',').split(',').map(item => {
+    //     return parseInt(item)
+    //   })
+    // }
+
+    // 扩展运算符
+    function flatten(arr) {
+      while(arr.some(item=>Array.isArray(item))) {
+          arr = [].concat(...arr);
+      }
+      return arr;
+    }
+
+    // 测试代码
+    const arr = [1, [2, 3], [4, 5]]
+    console.log(flatten(arr))
+  </script>
+</body>
+</html>
