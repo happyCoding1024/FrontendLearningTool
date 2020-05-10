@@ -12,9 +12,11 @@
     <style>
       .padding {
         width: 200px;
-        padding: 50px 0;
+        height: 100px;
+        padding: 30px;
         border: 1px solid #333;
         text-align: center;
+        box-sizing: border-box;
       }
     </style>
     <h1>padding</h1>
@@ -41,6 +43,29 @@
       <div class="line-height">
         <span>codingOrange</span>
       </div>     
+    </article>
+  </section>
+
+  <!-- position -->
+  <section>
+    <style>
+      .position .container {
+        position: relative;
+        width: 200px;
+        height: 100px;;
+        border: 1px solid #333;
+      }
+      .son {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+    <h1>position</h1>
+    <article class="position">
+      <div class="container">
+        <div class="son">codingOrange</div>
+      </div>
     </article>
   </section>
 
