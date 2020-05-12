@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写reduce方法</title>
+</head>
+<body>
+  <script>
+    // reduce 方法示例，实现数组求和
+    // const arr = [1, 2, 3]
+    // const sum = arr.reduce((res, item) => {
+    //   return res + item
+    // }, 0)
+    // console.log(sum)
+
+    // 实现 reduce 方法
+    Array.prototype.myReduce = function (fn, initData) {
+      
+      // 获取调用这个方法的数组
+      const self = this
+      // 保存之前的运行结果
+      let res = initData
+
+      self.forEach(item => {
+        res = fn(res, item)
+      }) 
+      return res
+    }
+
+    // 验证代码
+    const arr = [1, 2, 3, 4]
+    const sum = arr.myReduce((res, item) => {
+      return res + item
+    }, 0)
+    console.log(sum)
+
+  </script>
+</body>
+</html>
