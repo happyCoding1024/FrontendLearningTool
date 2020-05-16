@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每隔1s在页面上依次输出3，2，1</title>
+</head>
+<body>
+  <script>
+    // 这样写会在 1s 之后依次输出 3，2，1
+    // for (let i = 3; i > 0; i--) {
+    //   setTimeout(() => {
+    //     console.log(i)
+    //   }, 1000)
+    // }
+    
+    // 思路应该是在 setTimeout 的回调函数中再注册一个 setTimeout 任务
+    // 方法1：利用 setTimeout
+    // let num = 3
+    // function f () {
+    //     if (num > 0 && num < 4) {
+    //       console.log(num)
+    //       num--
+    //       setTimeout(f, 1000)
+    //     }
+    // }
+    // setTimeout(f, 1000)
+
+    // 方法2：利用 setInterval
+    let num = 3
+    function f () {
+      if (num <= 0) {
+        clearInterval(timer)
+      } 
+      console.log(num)
+      num--
+    }
+    var timer = setInterval(f, 1000)
+
+
+  </script>
+</body>
+</html>

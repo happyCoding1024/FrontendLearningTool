@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>requestAimationFrame</title>
+</head>
+<body>
+  <div id="root" style="width: 50px; height: 100px; background: red;"></div>
+  <script>
+    // 动画要想流畅，最低要保证 60帧/s 即 16.7 ms 更新一帧
+    // 现在让 div 元素的宽度由 50px 变到 400px，每次变 5px，需要变 70 帧
+    // 可以用 setTimeout 来实现
+    // function animate () {
+    //   let div = document.getElementById('root') 
+    //   let increase = 3
+    //   let cur = parseInt(div.style.width.replace('px', ''))
+    //   div.style.width = `${cur + increase}px`
+    //   if (cur < 400) {
+    //     setTimeout(animate, 16.7)
+    //   }
+    // }
+    // animate()
+
+    // requestAnimationFrame
+    // 利用 setTimeout 时需要手动控制频率，使用 RAF 浏览器自动控制
+    // 使用 RAF 时当我们切换到其它的标签，动画会自动停止运行，等我们切换回来时再继续运行，setTimeout 会一直运行
+    // 总之 RAF 是专门为动画设计的
+    function animate () {
+      let div = document.getElementById('root') 
+      let increase = 3
+      let cur = parseInt(div.style.width.replace('px', ''))
+      div.style.width = `${cur + increase}px`
+      if (cur < 400) {
+        requestAnimationFrame(animate)
+      }
+    }
+    animate() 
+  </script>
+  
+</body>
+</html>

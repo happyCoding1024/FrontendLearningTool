@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>求0到100的和</title>
+</head>
+<body>
+  <script>
+    function sum() {
+      // 记录递归次数
+      let count = 0
+      return function (total, n, callback) {
+        count++
+        console.log('count = ', count)
+        if (n === 0) {
+          callback(total)
+          return
+        }
+        if (count === 1000) {
+          count = 0
+          setTimeout(() => arguments.callee(total + n, n - 1, callback), 0)
+        } else {
+          arguments.callee(total + n, n - 1, callback)
+        }
+      }
+    }
+
+    const f = sum()
+    f(0, 10000, (value) => {
+      console.log(value)
+    })
+  </script>
+</body>
+</html>

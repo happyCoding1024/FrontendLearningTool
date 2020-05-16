@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变量提升</title>
+</head>
+<body>
+  <script>
+    /* var 变量提升，let 不会变量提升 */
+    // function sayName() {
+    //   console.log(num1) // undefined
+    //   console.log(num2) // 报错
+    //   var num1 = 'zhangsan'
+    //   let num2 = 'lisi'
+    // }
+    // sayName() 
+
+    /* function 提升 */
+    var sayName = () => {
+      console.log('say')
+    }
+    function sayName () { // 不会执行
+      console.log(num1)
+      console.log(num2)
+      var num1 = 10
+      let num2 = 20
+    }
+    sayName()
+  </script>
+</body>
+</html>

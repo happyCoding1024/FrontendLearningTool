@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>创建10个a标签点击的时候弹出对应的序号</title>
+</head>
+<body>
+  <script>
+    // 方法1：利用 let
+    // function f () {
+    //   for (let i = 0; i < 10; i++) {
+    //     let aElem = document.createElement('a')
+    //     aElem.innerHTML = `<div>${i}</div>`
+    //     document.body.appendChild(aElem)
+    //     aElem.addEventListener('click', (e) => {
+    //       alert(i)
+    //     })
+    //   }
+    // }
+    // f()
+
+    // 方法2：利用闭包
+    // 参考《JS高级程序设计》P181
+    function f2 () {
+      let i, aElem
+      for (i = 0; i < 10; i++) {
+        aElem = document.createElement('a')
+        aElem.innerHTML = `${i} <br>`
+        document.body.appendChild(aElem)
+        aElem.onclick = (function (num) {
+          return function () {
+            alert(num)
+          }
+        })(i)
+      }
+    }
+    f2()
+  </script>
+</body>
+</html>

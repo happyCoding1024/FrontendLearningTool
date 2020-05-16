@@ -6,47 +6,48 @@
   <title>Document</title>
 </head>
 <body>
-  <script>
-    // 不使用 Promise 实现发送 POST 请求
-    const xhr = new XMLHttpRequest();
-    // 常见的login是一个POST的地址
-    xhr.open('POST', '/Login', true); // true 表示异步，false 表示同步 
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          alert(xhr.responseText);
-        }
-      }
-    };
-    // 在POST请求时会发送一些数据给服务器
-    const postData = {
-      "userBName": "zhangsan",
-      "psd": '***'
-    };
-    // 需要将发送的JS对象变为JSON字符串的格式
-    xhr.send(JSON.stringify(postData));
+  <script type="text/javascript" src="./获取url参数.js"></script>
+  <!-- <script>
+    // // 不使用 Promise 实现发送 POST 请求
+    // const xhr = new XMLHttpRequest();
+    // // 常见的login是一个POST的地址
+    // xhr.open('POST', '/Login', true); // true 表示异步，false 表示同步 
+    // xhr.onreadystatechange = () => {
+    //   if (xhr.readyState === 4) {
+    //     if (xhr.status === 200) {
+    //       alert(xhr.responseText);
+    //     }
+    //   }
+    // };
+    // // 在POST请求时会发送一些数据给服务器
+    // const postData = {
+    //   "userBName": "zhangsan",
+    //   "psd": '***'
+    // };
+    // // 需要将发送的JS对象变为JSON字符串的格式
+    // xhr.send(JSON.stringify(postData));
 
-    // 使用 Promise 实现发送 GET 请求
-    function myAjax(url) {
-      return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest()
-        xhr.open('GET', url, true) // true表示异步，false表示同步
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState === 4) {
-            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
-              resolve(JSON.stringify(xhr.responseText))
-            } else if (xhr.status === 404) {
-              reject(new Error('发送请求失败'))
-            }
-          }
-        }
-        xhr.send(null)
-      })
-    }
-    myAjax('/test.json').then((res) => {
-      console.log(res)
-    })
-  </script>
+    // // 使用 Promise 实现发送 GET 请求
+    // function myAjax(url) {
+    //   return new Promise((resolve, reject) => {
+    //     const xhr = new XMLHttpRequest()
+    //     xhr.open('GET', url, true) // true表示异步，false表示同步
+    //     xhr.onreadystatechange = () => {
+    //       if (xhr.readyState === 4) {
+    //         if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+    //           resolve(JSON.stringify(xhr.responseText))
+    //         } else if (xhr.status === 404) {
+    //           reject(new Error('发送请求失败'))
+    //         }
+    //       }
+    //     }
+    //     xhr.send(null)
+    //   })
+    // }
+    // myAjax('/test.json').then((res) => {
+    //   console.log(res)
+    // })
+  </script> -->
   
   
 </body>
