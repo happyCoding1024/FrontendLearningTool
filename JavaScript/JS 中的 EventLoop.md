@@ -1,6 +1,24 @@
 # JavaScript 运行机制详解：再谈Event Loop
 
 > 原文链接： http://www.ruanyifeng.com/blog/2014/10/event-loop.html 
+>
+> 知乎上这篇文章，赞同数很多，说的也比较清晰 [详解JavaScript中的Event Loop（事件循环）机制](https://zhuanlan.zhihu.com/p/33058983)
+>
+> [浏览器与Node的事件循环(Event Loop)有何区别?](https://www.jianshu.com/p/ca723144102b)
+>
+> **浏览器端**
+>
+> 浏览器端事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。**宏任务队列可以有多个，微任务队列只有一个**。
+>
+> - 常见的 macro-task 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。
+> - 常见的 micro-task 比如: new Promise().then(回调)、MutationObserver(html5新特性) 等。
+>
+> **Node 端**
+>
+> Node端事件循环中的异步队列也是这两种：macro（宏任务）队列和 micro（微任务）队列。
+>
+> - 常见的 macro-task 比如：setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作等。
+> - 常见的 micro-task 比如: process.nextTick、new Promise().then(回调)等。
 
 ## 一、为什么JavaScript是单线程？
 
