@@ -2,6 +2,7 @@
 
 > 原文链接： http://www.ruanyifeng.com/blog/2014/10/event-loop.html 
 >
+
 > 知乎上这篇文章，赞同数很多，说的也比较清晰 [详解JavaScript中的Event Loop（事件循环）机制](https://zhuanlan.zhihu.com/p/33058983)
 >
 > [浏览器与Node的事件循环(Event Loop)有何区别?](https://www.jianshu.com/p/ca723144102b)
