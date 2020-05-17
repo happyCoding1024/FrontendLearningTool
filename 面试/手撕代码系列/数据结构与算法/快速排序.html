@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>快速排序</title>
+</head>
+<body>
+  <script>
+    function quickSort (arr, left, right) {
+      // 划分左右数组的索引
+      let index
+      if (arr.length > 1) {
+        index = partition(arr, left, right)
+        if (left < index - 1) {
+          quickSort(arr, left, index - 1)
+        }
+        if (right > index) {
+          quickSort(arr, index, right)
+        }
+      }
+      function partition (arr, left, right) {
+          // 设置主元
+          let pivot = arr[Math.floor((left + right) / 2)],
+              i = left,
+              j = right
+          // 比较左右指针处的元素和主元的大小
+          while (i <= j) {
+            while (arr[i] < pivot) {
+              i++
+            }
+            while (arr[j] > pivot) {
+              j--
+            }
+            if (i <= j) {
+              [arr[i], arr[j]] = [arr[j], arr[i]]
+              i++
+              j--
+            }
+          }
+          return i
+        }
+    }
+
+    // 测试代码
+    const arr = [1, 2, 5, 3]
+    quickSort(arr, 0, arr.length-1)
+    console.log(arr)
+  </script>
+</body>
+</html>

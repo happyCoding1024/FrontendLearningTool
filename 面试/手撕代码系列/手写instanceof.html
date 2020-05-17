@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    Object.prototype.myinstanceof = function (cons) {
+      
+      if (typeof cons !== 'function') {
+        return false
+      }
+      // 调用这个方法的实例
+      const self = this
+      
+      // 存放原型对象
+      let proto = self.__proto__
+
+      while (proto !== null) {
+        if (proto.constructor === cons) {
+          return true
+        }
+        proto = proto.__proto__
+      }
+      return false
+    }
+
+    class People {
+      constructor (name) {
+        this.name = name
+      }
+    }
+
+    class Student extends People {
+      constructor (name) {
+        super(name)
+        // People.apply(this, props)
+      }
+    }
+    const zhangsan = new Student('zhangsan')
+    console.log(zhangsan)
+    console.log(zhangsan.myinstanceof(People))
+  </script>
+</body>
+</html>

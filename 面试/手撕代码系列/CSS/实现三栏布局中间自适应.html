@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三栏布局中间自适应</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .layout {
+      margin-bottom: 20px;
+    }
+    /* 设置高度100px */
+    .layout article div {
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <section class="layout float">
+    <h1>float 布局</h1>
+    <style>
+      .layout.float .left {
+        float: left;
+        width: 300px;
+        background: pink;
+      }
+      .layout.float .right {
+        float: right;
+        width: 300px;
+        background: greenyellow;
+      }
+      .layout.float .center {
+        background: rgb(16, 92, 180);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h2>浮动解决方案</h2>
+      </div>
+    </article>
+  </section>
+  
+  <section class="layout position">
+    <h1>postion 布局</h1>
+    <style>
+      .layout.position article {
+        position: relative;
+      }
+      .layout.position .left {
+        position: absolute;
+        left: 0;
+        width: 300px;
+        background: pink;
+      }
+      .layout.position .right {
+        position: absolute;
+        right: 0;
+        width: 300px;
+        background: greenyellow;
+      }
+      .layout.position .center {
+        margin: 0 300px;
+        background: rgb(16, 92, 180);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h2>position解决方案</h2>
+      </div>
+    </article>
+  </section>
+
+  <section class="layout flex">
+    <h1>flex 布局</h1>
+    <style>
+      .layout.flex article {
+        display: flex;
+      }
+      .layout.flex .left {
+        flex: none;
+        width: 300px;
+        background: pink;
+      }
+      .layout.flex .right {
+        flex: none;
+        width: 300px;
+        background: greenyellow;
+      }
+      .layout.flex .center {
+        flex: 1;
+        background: rgb(16, 92, 180);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="center">
+        <h2>flex解决方案</h2>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <section class="layout table">
+    <h1>flex 布局</h1>
+    <style>
+      .layout.flex article {
+        display: flex;
+      }
+      .layout.flex .left {
+        flex: none;
+        width: 300px;
+        background: pink;
+      }
+      .layout.flex .right {
+        flex: none;
+        width: 300px;
+        background: greenyellow;
+      }
+      .layout.flex .center {
+        flex: 1;
+        background: rgb(16, 92, 180);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="center">
+        <h2>flex解决方案</h2>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <section class="layout grid">
+    <h1>flex 布局</h1>
+    <style>
+      .layout.flex article {
+        display: flex;
+      }
+      .layout.flex .left {
+        flex: none;
+        width: 300px;
+        background: pink;
+      }
+      .layout.flex .right {
+        flex: none;
+        width: 300px;
+        background: greenyellow;
+      }
+      .layout.flex .center {
+        flex: 1;
+        background: rgb(16, 92, 180);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="center">
+        <h2>flex解决方案</h2>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+</body>
+</html>

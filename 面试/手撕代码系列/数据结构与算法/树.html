@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>树</title>
+</head>
+<body>
+  <script>
+    
+    class Node {
+      constructor () {
+        this.key = key
+        this.left = left
+        this.right = right
+      }
+    }
+
+    class BinarySearchTree {
+      constructor () {
+        this.root = null
+      }
+    }
+
+    // 向 BinarySearchTree 中添加方法
+    Object.assign(BinarySearchTree.prototype, {
+      inOrderTraverse,
+      inOrderTraverse,
+      preOrderTraverse
+    })
+
+    // 中序遍历
+    function inOrderTraverse (callback) {
+      inOrderTraverseNode(this.root, callback)
+      function inOrderTraverseNode(node, callback) {
+        if (node !== null ) {
+          inOrderTraverseNode(node.left, callback)
+          callback(node.key)
+          inOrderTraverseNode(node.right)
+        }
+      }
+    }
+
+    // 先序遍历
+    function preOrderTraverse (callback) {
+      preOrderTraverseNode(this.root, callback)
+      function preOrderTraverseNode (node, callback) {
+        if (node !== null) {
+          callback(node.key)
+          preOrderTraverseNode(node.left, callback)
+          preOrderTraverseNode(node.right, callback)
+        }
+      }
+    }
+
+    // 后序遍历
+    function postOrderTraverse (callback) {
+      postOrderTraverseNode(this.root, callback) 
+      function postOrderTraverseNode (node, callback) {
+        if (node !== null) {
+          postOrderTraverseNode(node.left, callback)
+          postOrderTraverseNode(node.right, callback)
+          callback(node.key)
+        }
+      }
+    }
+  </script>
+</body>
+</html>
