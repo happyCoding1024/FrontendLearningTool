@@ -18,6 +18,7 @@
           return 
         }
         timer = setTimeout(() => {
+          // 外部怎样将参数传递进来呢？arguments 有值吗？
           fn.apply(this, arguments)
           // timer 为 null 时，启动一个定时任务
           timer = null

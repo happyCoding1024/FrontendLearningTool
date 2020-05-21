@@ -10,151 +10,151 @@
 
     /****************** 单向链表 ******************/
     // 定义单向链表中的每个节点
-    class Node {
-      constructor (element) {
-        this.element = element
-        this.next = null 
-      }
-    }
+    // class Node {
+    //   constructor (element) {
+    //     this.element = element
+    //     this.next = null 
+    //   }
+    // }
 
-    // 定义单向链表
-    class LinkedList {
-      constructor () {
-        this.length = 0
-        this.head = null
-      }
-    }
+    // // 定义单向链表
+    // class LinkedList {
+    //   constructor () {
+    //     this.length = 0
+    //     this.head = null
+    //   }
+    // }
 
-    // 添加方法
-    Object.assign(LinkedList.prototype, {
-        append,
-        removeAt,
-        remove,
-        insert,
-        isCircle 
-      }
-    )
+    // // 添加方法
+    // Object.assign(LinkedList.prototype, {
+    //     append,
+    //     removeAt,
+    //     remove,
+    //     insert,
+    //     isCircle 
+    //   }
+    // )
 
-    // 增加节点
-    function append (element) {
-      let node = new Node(element)
-      let current
-      // 如果是列表中的第一个节点
-      if (this.head === null) {
-        this.head = node
-      } else {
-        current = this.head
-        // 循环链表，直到找到最后一项
-        while (current.next) {
-          current = current.next
-        }
-        // 找到链表中的最后一项
-        current.next = node
-      } 
-      this.length++
-    }
+    // // 增加节点
+    // function append (element) {
+    //   let node = new Node(element)
+    //   let current
+    //   // 如果是列表中的第一个节点
+    //   if (this.head === null) {
+    //     this.head = node
+    //   } else {
+    //     current = this.head
+    //     // 循环链表，直到找到最后一项
+    //     while (current.next) {
+    //       current = current.next
+    //     }
+    //     // 找到链表中的最后一项
+    //     current.next = node
+    //   } 
+    //   this.length++
+    // }
 
-    // 移除特定位置的节点
-    function removeAt (position) {
-      // 检查输入的位置是否越界
-      if (position > -1 && position < this.length) {
-        let current = this.head,
-            index = 0,
-            previous
-        if (position === 0) {
-          this.head = current.next
-          this.length--
-          return current.element
-        }
-        while(current.next) {
-          index++
-          // 待删除节点的前一个节点
-          previous = current
-          // 待删除的节点
-          current = current.next
-          if (index === position) {
-            // 待删除节点的前一个节点指向删除节点的下一个节点
-            previous.next = current.next
-            this.length--
-            return current.element
-          }
-        }
-      } else {
-        return null
-      }
-    } 
+    // // 移除特定位置的节点
+    // function removeAt (position) {
+    //   // 检查输入的位置是否越界
+    //   if (position > -1 && position < this.length) {
+    //     let current = this.head,
+    //         index = 0,
+    //         previous
+    //     if (position === 0) {
+    //       this.head = current.next
+    //       this.length--
+    //       return current.element
+    //     }
+    //     while(current.next) {
+    //       index++
+    //       // 待删除节点的前一个节点
+    //       previous = current
+    //       // 待删除的节点
+    //       current = current.next
+    //       if (index === position) {
+    //         // 待删除节点的前一个节点指向删除节点的下一个节点
+    //         previous.next = current.next
+    //         this.length--
+    //         return current.element
+    //       }
+    //     }
+    //   } else {
+    //     return null
+    //   }
+    // } 
 
-    // 移除指定元素的节点
-    function remove(element) {
-      let current = this.head,
-          previous = current
-      if (current.element === element) {
-        this.head = current.next
-        this.length--
-        return true
-      }
-      while (current.next) {
-        previous = current
-        current = current.next
-        if (current.element === element) {
-          previous.next = current.next
-          this.length--
-          return true
-        }
-      }
-      return false
-    }
+    // // 移除指定元素的节点
+    // function remove(element) {
+    //   let current = this.head,
+    //       previous = current
+    //   if (current.element === element) {
+    //     this.head = current.next
+    //     this.length--
+    //     return true
+    //   }
+    //   while (current.next) {
+    //     previous = current
+    //     current = current.next
+    //     if (current.element === element) {
+    //       previous.next = current.next
+    //       this.length--
+    //       return true
+    //     }
+    //   }
+    //   return false
+    // }
     
-    // 插入节点
-    function insert (position, element) {
-      let current = this.head,
-          previous = this.head,
-          index = 0,
-          node = new Node(element)
-      if (position >= 0 && position <= this.length) {
-        if (position === 0) {
-          this.head = node
-          this.head.next = current
-          this.length++
-          return true
-        }
-        while (current.next) {
-          index++
-          previous = current
-          current = current.next
-          if (index === position) {
-            previous.next = node
-            node.next = current
-            this.length++
-            return true
-          }
-        }
-      } else {
-        return false
-      }
-    }
+    // // 插入节点
+    // function insert (position, element) {
+    //   let current = this.head,
+    //       previous = this.head,
+    //       index = 0,
+    //       node = new Node(element)
+    //   if (position >= 0 && position <= this.length) {
+    //     if (position === 0) {
+    //       this.head = node
+    //       this.head.next = current
+    //       this.length++
+    //       return true
+    //     }
+    //     while (current.next) {
+    //       index++
+    //       previous = current
+    //       current = current.next
+    //       if (index === position) {
+    //         previous.next = node
+    //         node.next = current
+    //         this.length++
+    //         return true
+    //       }
+    //     }
+    //   } else {
+    //     return false
+    //   }
+    // }
 
-    // 判断链表中有没有环
-    function isCircle () {
-      let runner = this.head
-          walker = this.head
-      while(walker) {
-        walker = walker.next
-        runner = runner.next.next
-        if (walker.element === runner.element) {
-          return true
-        }
-      }
-      return false
-    }
+    // // 判断链表中有没有环
+    // function isCircle () {
+    //   let runner = this.head
+    //       walker = this.head
+    //   while(walker) {
+    //     walker = walker.next
+    //     runner = runner.next.next
+    //     if (walker.element === runner.element) {
+    //       return true
+    //     }
+    //   }
+    //   return false
+    // }
 
-    // 测试代码
-    const list = new LinkedList()
-    list.append(3)
-    list.append(4)
-    list.append(5)
-    list.insert(2, 10)
-    console.log(list)
+    // // 测试代码
+    // const list = new LinkedList()
+    // list.append(3)
+    // list.append(4)
+    // list.append(5)
+    // list.insert(2, 10)
+    // console.log(list)
 
     
     /*************** 双向链表 ****************/
@@ -167,6 +167,7 @@
       }
     }
 
+    // 双向链表
     class DoubleLinkedList {
       constructor () {
         this.head = null
@@ -175,9 +176,102 @@
       }
     }
 
-    
+    // 给双向链表添加方法
+    Object.assign(DoubleLinkedList.prototype, {
+      insert,
+      removeAt
+    })
 
+    // 插入节点
+    function insert (position, element) {
+      let node = new DoubleListNode(element),
+          current = this.head, // current 指向当前你要操作的那个元素，这个牢记
+          previous,
+          index = 0
 
+      // 边界性检查
+      if (position >= 0 && position <= this.length) {
+        // 插在首位
+        if (position === 0) {
+          // 如果链表为空
+          if (!this.head) {
+            this.head = node
+            this.tail = node
+          } else {
+            this.head = node
+            node.next = current
+            current.prev = node
+          }
+          // 插在最后一个位置
+        } else if (position === this.length) {
+          current = this.tail // current 要永远指向当前要操作的节点
+          current.next = node
+          node.prev = current
+          this.tail = node
+          // 在中间插入
+        } else {
+          while (index++ < position) {
+            current = current.next
+            previous = current.prev
+          }
+          // 找到了 position 指向的节点 current
+          previous.next = node
+          node.prev = previous
+
+          current.prev = node
+          node.next = current
+        }
+        this.length++
+        return true
+      } else {
+        return false
+      }
+    }
+
+    // 从指定位置移除节点
+    function removeAt (position) {
+      let current = this.head,
+          previous,
+          index = 0
+      // 检查合法边界
+      if (position >= 0 && position < this.length) {
+        // 移除的是链表中的第一个元素
+        if (position === 0) {
+          if (this.length === 1) {
+            this.head = null
+            this.tail = null
+          } else {
+            this.head = current.next
+            this.head.prev = null
+          }
+          // 移除的是最后一个元素
+        } else if (position === this.length - 1) {
+          current = this.tail
+          tail = current.prev
+          tail.next = null
+          // 移除的是中间的元素
+        } else {
+          while (index++ < position) {
+            current = current.next
+            previous = current.prev
+          } 
+          previous.next = current.next
+          current.next.prev = previous
+        }
+        this.length--
+        return true 
+      } else {
+        return false
+      }
+    }
+    // 测试代码
+    const doubleList = new DoubleLinkedList()
+    doubleList.insert(0, 1)
+    doubleList.insert(1, 2)
+    doubleList.insert(2, 3)
+    doubleList.removeAt(1)
+
+    console.log(doubleList)
 
   </script>
 </body>

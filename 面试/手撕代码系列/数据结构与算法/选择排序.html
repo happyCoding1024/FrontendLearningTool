@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选择排序</title>
+</head>
+<body>
+  <script>
+    function selectSort (arr) {
+      for (let i = 0, len = arr.length; i < len; i++) {
+        let indexMin = i
+        for (let j = i; j < len; j++) {
+          if (arr[j] < arr[indexMin]) {
+            indexMin = j
+          }
+        }
+        if (i !== indexMin) {
+          [arr[i], arr[indexMin]] = [arr[indexMin], arr[i]]
+        }
+      }
+      return arr
+    }
+
+    // 测试代码
+    const arr = [4, 1, 3, 5]
+    console.log(selectSort(arr))
+  </script>
+</body>
+</html>

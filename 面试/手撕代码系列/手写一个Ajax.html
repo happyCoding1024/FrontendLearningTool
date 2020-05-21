@@ -14,7 +14,7 @@
         xhr.open('GET', url, true) // true表示异步，false表示同步
         xhr.onreadystatechange = () => {
           if (xhr.readyState === 4) {
-            if (xhr.state >= 200 && xhr.state < 300 || xhr.state === 304) {
+            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
               resolve(JSON.toStringify(xhr.responseText))
             } else if (xhr.status === 404) {
               reject(new Error('发送请求失败'))

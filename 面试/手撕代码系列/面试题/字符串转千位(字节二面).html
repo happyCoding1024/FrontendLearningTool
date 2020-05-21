@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串转千位的形式</title>
+</head>
+<body>
+  <script>
+    // 题目描述： 2348375380 变为 2,348,375,380 
+    function toKil (str) {
+      const arr = str.split('')
+      const num = arr.length % 3
+      let res = ''
+      for (let i = 0; i < num; i++) {
+        res += arr[i]
+      }
+      if (num !== 0) {
+        res += ','
+      }
+      let count = 0
+      for (let j = num; j < arr.length; j++) {
+        res += arr[j]
+        count++
+        if (count === 3 && j !== arr.length - 1) {
+          res += ','
+          count = 0
+        }
+      }
+      return res
+    }
+
+    // 测试代码
+    let str = '524348375380'
+    console.log(toKil(str))
+  </script>
+</body>
+</html>

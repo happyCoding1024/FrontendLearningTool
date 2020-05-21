@@ -22,15 +22,15 @@
       // 保存之前的运行结果
       let res = initData
 
-      self.forEach(item => {
-        res = fn(res, item)
+      self.forEach((item, index) => {
+        res = fn(res, item, index, self)
       }) 
       return res
     }
 
     // 验证代码
     const arr = [1, 2, 3, 4]
-    const sum = arr.myReduce((res, item) => {
+    const sum = arr.myReduce((res, item, index, array) => {
       return res + item
     }, 0)
     console.log(sum)

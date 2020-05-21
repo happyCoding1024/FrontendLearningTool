@@ -8,9 +8,6 @@
 <body>
   <script>
     function promiseAll (arr) {
-      if (!isArray(arr)) {
-        throw new TypeError('You must pass array')
-      }
       let result = []
       let count = 0
       arr.map((item, i) => {

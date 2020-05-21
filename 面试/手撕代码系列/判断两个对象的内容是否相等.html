@@ -12,7 +12,7 @@
       if (typeof obj1 !== 'object' || typeof obj2 !== 'object') {
           if (obj1 === obj2) {
             return true
-          } else if (obj1 !== obj2) {
+          } else {
             return false
           }
       }
@@ -24,17 +24,25 @@
         return false
       }
       // 记录当前 compareObject 的返回值，默认是 true
-      let status = true
+      // let status = true
+      // for (let key of obj1PropsArr) {
+      //   status = compareObject(obj1[key], obj2[key])
+      //   // 关键代码，当 status 为 false 时下面就不用再进行判断了，说明两个对象的内容并不相同
+      //   // 如果没有下面这条语句，那么只要对象底层的内容是相同的那么就返回 true
+      //   if (!status) {
+      //     return false
+      //   }
+      // }
+      // // 每次 compareObject 执行的返回结果
+      // return status
+
+      // 简化后版本
       for (let key of obj1PropsArr) {
-        status = compareObject(obj1[key], obj2[key])
-        // 关键代码，当 status 为 false 时下面就不用再进行判断了，说明两个对象的内容并不相同
-        // 如果没有下面这条语句，那么只要对象底层的内容是相同的那么就返回 true
-        if (!status) {
-          break
+        if (!compareObject(obj1[key], obj2[key])) {
+          return false
         }
       }
-      // 每次 compareObject 执行的返回结果
-      return status
+      return true
     }
     const obj1 = {
         'q': 'cnblogs.com/zhangguicheng/',
@@ -61,7 +69,7 @@
         'c': 'www.babeljs.cn/',
         'v': 'www.iconfont.cn/',
         'b': 'webpack.js.org/',
-        'n': 'jquery.com',
+        'n': 'jquery.com/',
         'm': 'regexper.com/'
       };
     const obj2 = {
