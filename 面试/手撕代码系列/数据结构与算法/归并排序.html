@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>归并排序</title>
+</head>
+<body>
+  <script>
+    function mergeSort (arr) {
+      let len = arr.length
+      if (len === 1) {
+        return arr
+      }
+      let mid = Math.floor(len / 2),
+          left = arr.slice(0, mid),
+          right = arr.slice(mid, len)
+      return merge (mergeSort(left), mergeSort(right))
+
+      function merge (left, right) {
+        let il = 0,
+            ir = 0,
+            result = []
+        while(il < left.length && ir < right.length) {
+          if (left[il] < right[ir]) {
+            result.push(left[il++])
+          } else {
+            result.push(right[ir++])
+          }
+        }
+        while(il < left.length) {
+          result.push(left[il++])
+        }
+        while(ir < right.length) {
+          result.push(right[ir++])
+        }
+        return result
+      }
+    }
+
+    // 测试代码
+    const arr = [2, 3, 1, 4]
+    console.log(mergeSort(arr))
+    
+  </script>
+</body>
+</html>

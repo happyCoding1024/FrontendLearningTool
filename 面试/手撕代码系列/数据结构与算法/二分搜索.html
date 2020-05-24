@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二分搜索</title>
+</head>
+<body>
+  <script>
+    // 方法一 利用递归
+    // function binarySearch () {
+    //   // 当在右边的数组时就加上一个 mid，这样可以保证返回的索引就是原数组中的索引
+    //   let ir = 0
+    //   return function (arr, item) {
+    //     // 二分搜索首先要保证数组是有序的
+    //     arr.sort((a, b) => a - b)
+
+    //     let len = arr.length,
+    //       mid = Math.floor(len / 2)
+    //     if (item === arr[mid]) {
+    //       return ir + mid
+    //     }
+    //     if (item !== arr[mid] && len === 1) {
+    //       return false
+    //     }
+    //     if (item < arr[mid]) {
+    //       return arguments.callee(arr.slice(0, mid), item)
+    //     }
+    //     if (item > arr[mid]) {
+    //       ir += mid
+    //       return arguments.callee(arr.slice(mid, len), item)
+    //     }
+    //   }
+    // }
+
+    // 方法二 利用 low，height 指针
+    function binarySearch (arr, item) {
+      // 二分搜索首先要保证数组是有序的
+      arr.sort((a, b) => a - b)
+
+      let low = 0,
+        high = arr.length - 1,
+        element,
+        mid
+      while (low <= high) {
+        mid = Math.floor((low + high) / 2)
+        element = arr[mid]
+        if (item > element) {
+          low = mid + 1
+        }
+        if (item < element) {
+          high = mid - 1
+        }
+        if (item === element) {
+          return mid
+        }
+      }
+      return false
+    }
+
+    const arr = [1, 4, 5, 6, 7, 8, 9] 
+    console.log(binarySearch(arr, 1))
+  </script>
+</body>
+</html>

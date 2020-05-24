@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图</title>
+</head>
+<body>
+  <script>
+    class Queue {
+      constructor () {
+        this.arr = [] // 利用数组存储队列中的数据
+      }
+    }
+    
+    // 添加方法
+    Object.assign(Queue.prototype, {
+      enQueue,
+      deQueue,
+      front,
+      isEmpty,
+      size
+    })
+
+    // 入队
+    function enQueue (element) {
+      this.arr.push(element)
+    }
+
+    // 出队
+    function deQueue () {
+      return this.arr.shift()
+    }
+
+    // 查看队列头元素
+    function front () {
+      return this.arr[0]
+    }
+
+    // 检查队列是否为空
+    function isEmpty () {
+      return this.arr.length === 0
+    }
+
+    // 查看队列元素的个数
+    function size () {
+      return this.arr.length
+    }
+
+    class Graph {
+      constructor () {
+        this.vertices = []
+        this.adjList = new Map()
+      }
+    }
+
+    Object.assign(Graph.prototype, {
+      addVertex,
+      addEdge,
+      toString,
+      BFS,
+      BFS_,
+      DFS
+    })
+
+    // 添加新的顶点
+    function addVertex (v) {
+      this.vertices.push(v)
+      this.adjList.set(v, [])
+    }
+
+    // 添加新的边
+    function addEdge (v, w) {
+      this.adjList.get(v).push(w)
+      // 如果是无向图，还需要添加一条 w -> v
+      this.adjList.get(w).push(v)
+    }
+
+    // 打印图
+    // 输出示例
+    /*
+      A ->  B C D
+      B ->  A E F
+      C ->  A D G
+      D ->  A C G H
+      E ->  B I
+      F ->  B
+      G ->  C D
+      H ->  D
+      I ->  E
+    */
+    function toString () {
+      let result = ''
+      this.vertices.forEach(vertex => {
+        result += `${vertex} -> `
+        let neighbors = this.adjList.get(vertex)
+        neighbors.forEach(item => {
+          result += ` ${item}`
+        })
+        result += '\n'
+      })
+      return result
+    }
+
+    // BFS
+    function BFS (v, callback) {
+      const self = this
+      const color = initialColor(self.vertices)
+      const queue = new Queue()
+      queue.enQueue(v)
+
+      while (!queue.isEmpty()) {
+        const u = queue.deQueue()
+        const neighbors = self.adjList.get(u)
+        color[u] = 'grey'
+        neighbors.forEach(vertex => {
+          if (color[vertex] === 'white') {
+            color[vertex] = 'grey'
+            queue.enQueue(vertex)
+          }
+        })
+        color[u] = 'black'
+        if (callback) {
+          callback(u)
+        }
+      }
+      function initialColor (vertices) {
+        const color = {}
+        vertices.forEach(vertex => {
+          color[vertex] = 'white'
+        })
+        return color
+      }
+    }
+
+    // 改进的 BFS，可以获取到传入的顶点到各个顶点的距离和每个顶点的前溯点并利用前溯点获取传入顶点到各个顶点的路径
+    function BFS_ (v, callback) {
+      const self = this
+      const color = initialColor(self.vertices)
+      const queue = new Queue()
+      const d = {} // 各个顶点到传入顶点的距离
+      const pred = {} // 各个顶点的前趋顶点
+      let path // 记录输入顶点到各个顶点的路径
+      queue.enQueue(v)
+      d[v] = 0
+      pred[v] = null
+
+      while (!queue.isEmpty()) {
+        const u = queue.deQueue()
+        const neighbors = self.adjList.get(u)
+        color[u] = 'grey'
+        neighbors.forEach(vertex => {
+          if (color[vertex] === 'white') {
+            d[vertex] = d[u] + 1
+            pred[vertex] = u
+            color[vertex] = 'grey'
+            queue.enQueue(vertex)
+          }
+        })
+        color[u] = 'black'
+        if (callback) {
+          callback(u)
+        }
+      }
+    
+      path = getPath(self.vertices, pred)
+
+      function initialColor (vertices) {
+        const color = {}
+        vertices.forEach(vertex => {
+          color[vertex] = 'white'
+        })
+        return color
+      }
+
+      function getPath (vertices, pred) {
+        const fromVertex = vertices[0]
+        const allPath = {}
+        for (let i = 1; i < vertices.length; i++) {
+          const path = []
+          let s = ''
+          let toVertex = vertices[i]
+          let v = toVertex
+          while (pred[v] !== null) {
+            path.push(v)
+            v = pred[v]
+          }
+          path.push(fromVertex)
+          while (path.length !== 0) {
+            s += `${path.pop()} -> `
+          }
+          s = s.replace(/-> $/, '')
+          allPath[toVertex] = s
+        }
+        return allPath
+      }
+
+      return {
+        d,
+        pred,
+        path
+      }
+    }
+
+    // DFS
+    function DFS (callback) {
+      const self = this // 调用 DFS 的那个实例
+      const color = initialColor(self.vertices)
+
+      DFSVisit(self.vertices[0], color, callback, self.adjList)
+
+      function DFSVisit (u, color, callback, adjList) {
+        color[u] = 'grey'
+        if (callback) {
+          callback(u)
+        }
+        let neighbors = adjList.get(u)
+        neighbors.forEach(vertex => {
+          if (color[vertex] === 'white') {
+            color[vertex] = 'gery'
+            DFSVisit(vertex, color, callback, adjList)
+          }
+        })
+        color[u] = 'black'
+      }
+
+      function initialColor (vertices) {
+        const color = {}
+        vertices.forEach(vertex => {
+          color[vertex] = 'white'
+        })
+        return color
+      }
+    }
+
+    // 测试代码
+    const graph = new Graph()
+    let myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    myVertices.forEach(item => {
+      graph.addVertex(item)
+    })
+    graph.addEdge('A', 'B')
+    graph.addEdge('A', 'C')
+    graph.addEdge('A', 'D')
+    graph.addEdge('C', 'D')
+    graph.addEdge('C', 'G')
+    graph.addEdge('D', 'G')
+    graph.addEdge('D', 'H')
+    graph.addEdge('B', 'E')
+    graph.addEdge('B', 'F')
+    graph.addEdge('E', 'I')
+
+    graph.DFS((u) => {
+      console.log(u)
+    })
+
+    // console.log(graph.BFS_('A', (u) => {
+    //   console.log(u)
+    // }))
+  </script>
+</body>
+</html>

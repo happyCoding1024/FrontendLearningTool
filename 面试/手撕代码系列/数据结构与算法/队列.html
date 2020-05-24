@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>队列</title>
+</head>
+<body>
+  <script>
+    class Queue {
+      constructor () {
+        this.arr = [] // 利用数组存储队列中的数据
+      }
+    }
+    
+    // 添加方法
+    Object.assign(Queue.prototype, {
+      enQueue,
+      deQueue,
+      front,
+      isEmpty,
+      size
+    })
+
+    // 入队
+    function enQueue (element) {
+      this.arr.push(element)
+    }
+
+    // 出队
+    function deQueue () {
+      return this.arr.shift()
+    }
+
+    // 查看队列头元素
+    function front () {
+      return this.arr[0]
+    }
+
+    // 检查队列是否为空
+    function isEmpty () {
+      return this.arr.length === 0
+    }
+
+    // 查看队列元素的个数
+    function size () {
+      return this.arr.length
+    }
+
+    // 测试代码
+    const queue = new Queue()
+    queue.enQueue(2)
+    queue.enQueue(2)
+    queue.enQueue(2)
+    queue.deQueue()
+    console.log(queue)
+  </script>
+</body>
+</html>
