@@ -54,13 +54,15 @@
       }
     }
 
+    // 添加方法
     Object.assign(Graph.prototype, {
       addVertex,
       addEdge,
       toString,
       BFS,
       BFS_,
-      DFS
+      DFS,
+      DFS_
     })
 
     // 添加新的顶点
@@ -233,6 +235,56 @@
       }
     }
 
+    // 改进的 DFS，可以获取顶点的发现时间，探索时间，前溯点
+    function DFS_ (callback) {
+      const d = {}
+      const pred = {}
+      const f = {}
+      const self = this
+      const color = initialColor(self.vertices)
+      let time = 0
+      // 初始化 f, d, pred
+      self.vertices.forEach(vertex => {
+        d[vertex] = 0
+        f[vertex] = 0
+        pred[vertex] = null
+      })
+
+      DFSVisit(self.vertices[0])
+
+      function DFSVisit (u) {
+        if (callback) {
+          callback(u)
+        }
+        color[u] = 'grey'
+        d[u] = ++time
+        const neighbors = self.adjList.get(u)
+        neighbors.forEach(w => {
+          if (color[w] === 'white') {
+            color[w] = 'grey'
+            pred[w] = u
+            DFSVisit(w)
+          }
+        })
+        f[u] = ++time
+        color[u] = 'black'
+      }
+    
+      function initialColor (vertices) {
+        const color = {}
+        vertices.forEach(vertex => {
+          color[vertex] = 'white'
+        })
+        return color
+      }
+    
+      return {
+        d,
+        f,
+        pred
+      }
+    }
+    
     // 测试代码
     const graph = new Graph()
     let myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
@@ -250,13 +302,13 @@
     graph.addEdge('B', 'F')
     graph.addEdge('E', 'I')
 
-    graph.DFS((u) => {
-      console.log(u)
-    })
-
-    // console.log(graph.BFS_('A', (u) => {
+    // graph.DFS((u) => {
     //   console.log(u)
-    // }))
+    // })
+
+    console.log(graph.DFS_(u => {
+      console.log(u)
+    }))
   </script>
 </body>
 </html>

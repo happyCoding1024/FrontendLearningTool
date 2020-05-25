@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>堆排序</title>
+</head>
+<body>
+  <script>
+    function heapSort (arr) {
+      let heapSize = arr.length
+      buildHeap(arr)
+    
+      while (heapSize > 1) {
+        [arr[heapSize - 1], arr[0]] = [arr[0], arr[heapSize - 1]]
+        heapSize--
+        heapify(arr, heapSize, 0)
+      }
+
+      function buildHeap (arr) {
+        let heapSize = arr.length
+        // 从下往上建立堆，第一个需要建立堆的节点是，arr.length/2
+        for (let i = Math.floor(heapSize / 2); i >= 0; i--) {
+          heapify(arr, heapSize, i)
+        }
+      }
+
+      function heapify (arr, heapSize, i) {
+        let left = i * 2 + 1,
+            right = i * 2 + 2,
+            maxIndex = i
+        // 递归出口
+        if (i >= heapSize) {
+          return 
+        }
+        if (left < heapSize && arr[maxIndex] < arr[left]) {
+          maxIndex = left
+        }
+        if (right < heapSize && arr[maxIndex] < arr[right]) {
+          maxIndex = right
+        }
+        if (maxIndex !== i) {
+          [arr[maxIndex], arr[i]] = [arr[i], arr[maxIndex]]
+          heapify(arr, heapSize, maxIndex)
+        }
+      }
+    }
+
+    // 测试代码
+    const arr = [2, 3, 1, 7, 4]
+    heapSort(arr)
+    console.log(arr)
+  </script>
+</body>
+</html>

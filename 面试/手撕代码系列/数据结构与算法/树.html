@@ -9,10 +9,10 @@
   <script>
     
     class Node {
-      constructor () {
-        this.key = key
-        this.left = left
-        this.right = right
+      constructor (element) {
+        this.key = element
+        this.left = null
+        this.right = null
       }
     }
 
@@ -25,15 +25,15 @@
     // 向 BinarySearchTree 中添加方法
     Object.assign(BinarySearchTree.prototype, {
       inOrderTraverse,
-      inOrderTraverse,
+      postOrderTraverse,
       preOrderTraverse
     })
 
     // 中序遍历
     function inOrderTraverse (callback) {
       inOrderTraverseNode(this.root, callback)
-      function inOrderTraverseNode(node, callback) {
-        if (node !== null ) {
+      function inOrderTraverseNode (node, callback) {
+        if (node !== null) {
           inOrderTraverseNode(node.left, callback)
           callback(node.key)
           inOrderTraverseNode(node.right)
