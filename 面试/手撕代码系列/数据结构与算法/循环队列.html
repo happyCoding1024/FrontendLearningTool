@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>循环队列</title>
+</head>
+<body>
+  <script>
+    /* 循环队列 */
+    class MyCircularQueue {
+      constructor (len) {
+        // 用数组存放队列中的数据
+        this.list = new Array(len)
+        // 循环队列长度
+        this.length = len
+        // 循环队列队首指针
+        this.head = 0
+        // 循环队列队尾指针
+        this.tail = 0
+      }
+
+      // 插入元素
+      enQueue (element) {
+        if (!this.isFull()) {
+          this.list[this.tail] = element
+          if (this.tail === this.length - 1) {
+            this.tail = 0
+          } else {
+            this.tail++
+          }
+          return true
+        } else {
+          return false
+        }
+      }
+
+      // 删除元素
+      deQueue () {
+        if (!this.isEmpty()) {
+          let v = this.list[this.head]
+          this.list[this.head] = ''
+          this.head = this.head === this.length - 1 ? 0 : ++this.head
+          return v
+        } else {
+          return false
+        }
+      }
+
+      // 判断是否为空
+      isEmpty () {
+        return this.head === this.tail && !this.list[this.head]
+      }
+
+      // 判断是否为满
+      isFull () {
+        // !! 的作用是将其转换为布尔类型
+        return (this.head === this.tail && !!this.list[this.head])
+      }
+
+      // 返回队首元素
+      front () {
+        return this.isEmpty() ? false : this.list[this.head]
+      }
+
+      // 返回队尾元素
+      rear () {
+        // 注意：this.tail 中存储的是队尾元素的下一个位置
+        if (!this.isEmpty()) {
+          return this.tail === 0 ? this.list[this.length - 1] : this.list[this.tail - 1]  
+        } else {
+          return false
+        }
+      }
+    }
+    
+    const len = 2
+    const circularQueue = new MyCircularQueue(len)
+    console.log('插入： ', circularQueue.enQueue(1))
+    console.log('插入： ', circularQueue.enQueue(2))
+    console.log('rear： ', circularQueue.rear())
+    console.log('front： ', circularQueue.front())
+    console.log('出队： ', circularQueue.deQueue())
+    console.log('rear： ', circularQueue.rear())
+    console.log('front： ', circularQueue.front())
+    console.log('出队： ', circularQueue.deQueue())
+    console.log('rear： ', circularQueue.rear())
+    console.log('isEmpty = ', circularQueue.isEmpty())
+    console.log('当前 list = ', circularQueue.list)
+  </script>
+</body>
+</html>

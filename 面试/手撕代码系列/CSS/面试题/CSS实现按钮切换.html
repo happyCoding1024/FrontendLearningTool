@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS实现按钮切换</title>
+  <style tyep="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+      height: 30px;
+      width: 70px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+    }
+    input {
+      display: none;
+    }
+
+    .inner input + label {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      left: 2px;
+      top: 0px;
+    }
+
+    .inner input + label + div {
+      height: 30px;
+      width: 70px;
+      border-radius: 25px;
+    }
+
+    .inner input:checked + label {
+      left: 36px;
+      background-color: white;
+    }
+    .inner input:checked + label + div {
+      background-color: rgb(69, 214, 97);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="inner">
+      <input type="checkbox" id="handsome">
+      <label for="handsome"></label>
+      <div class="beijing"></div>
+    </div>
+  </div>
+  
+</body>
+</html>

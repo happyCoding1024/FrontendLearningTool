@@ -55,7 +55,7 @@
 
     // 后序遍历
     function postOrderTraverse (callback) {
-      postOrderTraverseNode(this.root, callback) 
+      postOrderTraverseNode(this.root, callback)
       function postOrderTraverseNode (node, callback) {
         if (node !== null) {
           postOrderTraverseNode(node.left, callback)

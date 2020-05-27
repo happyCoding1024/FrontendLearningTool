@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5月30日（关于 `Object.keys()` 和 `Object.getOwnPropertyNames()`）</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      a: 1,
+      b: 2
+    }
+    Object.defineProperty(obj, 'a', {
+      enumerable: false
+    })
+    let arr1 = Object.keys(obj)
+    console.log(arr1)
+    let arr2 = Object.getOwnPropertyNames(obj) 
+    console.log(arr2)
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let book = {
+      _year: 2004,
+      version: 1
+    }
+    Object.defineProperty(book, 'year', {
+      get: function () {
+        return this._year
+      },
+      set: function (newValue) {
+        this._year = newValue
+        const year = 2004
+        if (newValue > 2004) {
+          this.version = this._year - year
+        }
+      }
+    })
+    book.year = 2006
+    console.log(book)
+    console.log(book.year)
+    console.log(book.version)
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>customQuery</title>
+</head>
+<body>
+  <script>
+    /*  题目描述 */
+    /*
+    手写 customQuery 函数，实现类似于 querySelector 函数的功能，但只实现类选择器和后代选择器的查询
+    接收参数为一个字符串，如：‘.class-a .class-b’ 要求调用 customQuery('.class-a .class-b') 可以查找到对应的元素节点
+    例如：
+      customQuery('.class-a, .class-b') 就可以查找到 .class-a 的子类 .class-b 元素
+    */
+
+    function customQuery (selector) {
+      let result // 返回结果
+      let tempRes // 临时结果
+      let len // 记录查询的类名的个数
+      let cache = {}
+      try {
+        if (cache[selector]) {
+          return cache[selector]
+        } else {
+          let sel = selector.split(/\s+/).map(item => {
+            return item.slice(1)
+          })
+          tempRes = Array.prototype.slice.call(document.getElementsByClassName(sel[0]))
+          len = tempRes.length
+          if (len === 0) {
+            return null
+          } else if (len === 1) {
+            result = tempRes[0]
+          } else {
+          }
+          cache[selector] = result
+          return result
+        }
+      } catch (error) {
+        return null
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>纯CSS实现tab切换</title>
+  <style type="text/css">
+    input {
+      display: none; /* 将复选框前面的小正方形隐藏*/
+    }
+    .checkbox input+label {
+      background: url("../../1.png"); /* 未点击时前面的图标 */
+      background-size: 20px 20px; 
+      background-repeat: no-repeat;
+      padding-left: 20px;
+    }
+    /* 当点击复选框时,就会选中input：checked，然后再选择它的兄弟元素label，变换背景图，即可完成点击图标时前图标变颜色*/
+    .checkbox input:checked+label { 
+      background: url("../../2.png");
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkbox">
+    <input type="checkbox" id="handsome">
+    <label for="handsome">加油呀</label>
+  </div>
+</body>
+</html>
