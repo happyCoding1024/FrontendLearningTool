@@ -14,8 +14,6 @@
 
 推荐：[前端每日知识点分享(总结版 每日更新)](/面试/前端每日知识点分享(总结版).md)
 
-![share](https://raw.githubusercontent.com/happyCoding1024/image-hosting/master/img/share.png)
-
 查看方式
 
 - 直接在仓库中在相应的文件夹下进行查看(有些图片可能没有上传到图床，所以有可能有的图片显示不出来)
