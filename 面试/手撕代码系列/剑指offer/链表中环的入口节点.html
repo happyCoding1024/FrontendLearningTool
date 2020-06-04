@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>链表中环的入口节点</title>
+</head>
+<body>
+  <script>
+    /**
+     * 思路：
+     * 1）首先通过快慢指针找到相遇的节点
+     * 2）假设相遇点为 p,环的入口点为 q,起始点到入口点的长度为 A，入口点到相遇点的长度为 B
+     * 相遇点到入口点的长度为 C，由于慢指针走了 A+B，所以快指针走了 2*(A+B)，假设在相遇时快指针已经在环中走了 n 圈，这里为了
+     * 方便比较，假设快指针只走了1圈，所以快指针走的路程是 A+2*B+C，因此 C=A，所以可以新建一个指针newPointer，令其从头节点出发
+     * 每次走一步，然后慢指针从相遇点出发每次走一步，这样它们相遇的点就是入口点
+     * */
+    function EntryNodeOfLoop (pHead) {
+      let runner = pHead
+      let walker = pHead
+      let newPointer = pHead
+      if (pHead == null || pHead.next == null) {
+        return null
+      }
+      // 首先找相遇点
+      while (walker) {
+        walker = walker.next
+        runner = walker.next.next
+        if (walker === runner) {
+          break
+        }
+      }
+      if (walker !== null) {
+        while (newPointer !== walker) {
+          newPointer = newPointer.next
+          walker = walker.next
+        }
+      }
+      return walker
+    }
+  </script>
+</body>
+</html>

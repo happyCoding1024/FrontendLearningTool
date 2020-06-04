@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode 148. 排序链表</title>
+</head>
+<body>
+  <script>
+    // 原题链接：[148. 排序链表](https://leetcode-cn.com/problems/sort-list/)
+    // 首先建立链表节点类
+    class Node {
+      constructor (ele) {
+        this.ele = ele
+        this.next = null
+      }
+    }
+
+    // 创建链表类
+    class List {
+      constructor () {
+        this.head = null
+        this.length = 0
+      }
+
+      // 插入节点
+      insert (pos, ele) {
+        let current = this.head
+        let previous = this.head
+        let node = new Node(ele)
+        let index = 0
+        if (pos >= 0 && pos <= this.length) {
+          if (pos === 0) {
+            if (this.isEmpty()) {
+              this.head = node
+            } else {
+              this.head = node
+              this.head.next = current
+            }
+          } else {
+            while (index !== pos) {
+              index++
+              previous = current
+              current = current.next
+            }
+            previous.next = node
+            node.next = current
+          }
+          this.length++
+          return true
+        } else {
+          return false
+        }
+      }
+    
+      // 判断链表是否为空
+      isEmpty () {
+        return this.length === 0
+      }
+    
+      // 排序链表(快排思想)
+      quickSortList () {
+        quickSort(this.head, null)
+
+        function quickSort (begin, end) {
+          let mid = partition(begin, end)
+          console.log('mid = ', mid)
+          if (begin !== end) {
+            quickSort(begin, mid)
+            // quickSort(mid.next, end)
+          }
+        }
+
+        function partition (begin, end) {
+          let p = begin
+          let q = begin.next
+          let pivot = begin.ele
+          while (q !== end) {
+            if (q.ele < pivot) {
+              p = p.next
+              // 交换 p 和 q 指向的元素的内容
+              swap(p, q)
+            }
+            q = q.next
+          }
+          // 让基准元素跑到中间去
+          swap(p, begin)
+          return p
+        }
+        // 交换两个元素
+        function swap (p, q) {
+          [p.ele, q.ele] = [q.ele, p.ele]
+        }
+      }
+    }
+
+    // 测试代码
+    const list = new List()
+    const arr = [3, 1, 2, 6]
+    arr.forEach((item, index) => {
+      list.insert(index, item)
+    })
+    console.log(list)
+    list.quickSortList()
+    // console.log(list)
+  </script>
+</body>
+</html>

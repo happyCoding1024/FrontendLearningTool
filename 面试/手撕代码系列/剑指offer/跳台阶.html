@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跳台阶</title>
+</head>
+<body>
+  <script>
+    // 方法一：递归型，时间复杂度：O(n^2)
+    // function jumpFloor (n) {
+    //   if (n === 1) return 1
+    //   if (n === 2) return 2
+    //   return jumpFloor(n - 1) + jumpFloor(n - 2)
+    // }
+    // 方法二：循环型，时间复杂度：O(n)
+    function jumpFloor(n) {
+      if (n <= 2) {
+        return n
+      }
+      let pre1 = 2
+      let pre2 = 1
+      for (let i = 3; i <= n; i++) {
+        pre1 = pre1 + pre2
+        pre2 = pre1 - pre2
+      }
+      return pre1
+    }
+  </script>
+</body>
+</html>

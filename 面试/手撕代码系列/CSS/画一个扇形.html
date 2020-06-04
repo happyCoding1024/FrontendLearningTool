@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>画一个三角形</title>
   <style type="text/css">
-    .triangle {
+    .shanxing {
       width: 0;
       height: 32px;
       border-radius: 16px;
@@ -16,6 +16,19 @@
   </style>
 </head>
 <body>
-  <div class="triangle"></div>
+  <div class="shanxing"></div>
+  <section>
+    <style>
+      .shanxing_border_redius {
+        width: 32px;
+        height: 32px;
+        /* 分别代表左上，右上，右下，左下的圆角，当其它三个圆角都为0，表示没有圆角，另一个圆角是100%，代表元素的宽度，这个时候圆角所对应圆的原点就在右上，圆正好经过左上点和右下点 */
+        border-radius: 0 0 0 32px;
+        background-color: pink;
+      }
+    </style>
+    <h1>完全利用 border-radius</h1>
+    <div class="shanxing_border_redius"></div>
+  </section>
 </body>
 </html>

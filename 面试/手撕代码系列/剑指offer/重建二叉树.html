@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重建二叉树</title>
+</head>
+<body>
+  <script>
+    // 题目1：给前序和中序遍历序列，重建二叉树
+    /**
+     * 思路：
+     * 根据前序遍历序列能够获得树的根节点
+     * 然后利用中序遍历序列，找到这个根节点就能获取到左树上的节点，右树上的节点，左树上的前序，中序遍历序列和右树上的中序遍历序列
+     * 最后利用递归的方式处理上述的流程
+    **/
+    class TreeNode {
+      constructor (key) {
+        this.key = key
+        this.left = null
+        this.right = null
+      }
+    }
+    function reConstructBinaryTree (preOrder, inOrder) {
+      // 检测是否序列为空，还有一个作用就是当叶子节点时左右节点都为null
+      if (preOrder.length === 0 && inOrder.length === 0) {
+        return null
+      }
+      // 前序遍历序列的第一个节点就是树的根节点
+      const root = new TreeNode(preOrder[0])
+      // 找到中序遍历中树的根节点，那么前面的就是左子树，后面的就是右子树,然后子树中也有根节点，前序，中序遍历序列，重复上面的过程
+      for (let i = 0, len = inOrder.length; i < len; i++) {
+        if (inOrder[i] === preOrder[0]) {
+          // 左子树就是中序遍历序列中根节点前面的那些节点,左子树的前序遍历序列就是 1 -> i 的元素
+          root.left = reConstructBinaryTree(preOrder.slice(1, i + 1), inOrder.slice(0, i))
+          // 右子树就是中序遍历序列中根节点后面的那些节点，右子树的前序遍历序列就是 i + 1 -> preOrder.length 的元素
+          // 前序遍历在左子树中把根节点(i=0)去掉了，右子树中就可以从i+1开始了，中序遍历的第i个元素是根元素，所以中序遍历序列是从 i + 1 开始
+          root.right = reConstructBinaryTree(preOrder.slice(i + 1, len), inOrder.slice(i + 1, len))
+          // 在中序遍历序列中找到根元素后就没必要再继续向下循环了
+          break
+        }
+      }
+      return root
+    }
+
+    // 题目2：给中序和后序遍历序列，重建二叉树
+    /**
+     * 同理，这种题目的目标就是找出根元素，根据后序遍历序列，根元素是最后一个元素
+     * 然后再通过中序遍历序列找出左右子树，然后递归即可
+    **/
+
+    // 题目3：给前序和后序遍历序列，重建二叉树(无法重建)
+    /**
+     * 注意只给先序和后序无法重建一棵二叉树，因为无法判断左子树和右子树
+    **/
+  </script>
+</body>
+</html>

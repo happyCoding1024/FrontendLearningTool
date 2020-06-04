@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二维数组中的查找</title>
+</head>
+<body>
+  <script>
+    /**
+     * 思路：
+     * 既然是查找，一般有顺序搜索和二分搜索两种方法
+     * 1）顺序搜索比较好理解就是依次遍历数组中的每一个元素然后进行比较
+     * 2）二分搜索是针对有序数组来说的，本题中数组正好是有序的。之前学的是针对一维数组的二分搜索，但是思想要会用。
+     * 这里是二维数组，关键点在于如何取分割的元素。第一次取的分割元素必须是某个边界上的，而且要经过判断之后能舍弃一行或一列。
+     * 这样的分割元素只有右上和左下元素可以胜任。
+     * 假设现在取的元素是右上，当 target 小于这个元素时，那么可以肯定这个元素所在的列不可能了，所以可以将取第一行的倒数第二个元素
+     * 作为分隔元素，这个时候如果 target 大于这个元素，那么可以确定第一行前面的元素已经不可能了，所以这个时候可以取第二行的倒数第二个元素
+     * 作为分隔元素，因此类推。
+     * 最坏的情况的是分隔元素取了 m + n（这个时候把每一行每一列都和target比较了，注意并不是 m*n）,因此时间复杂度为 O(m + n)
+     * 只有几个变量，并没有长度为 n 的数组等变量，因此空间复杂度为 O(1)
+     * */
+    // 方案 1： 顺序搜索，暴力解法,时间复杂度 O(n^2) 空间复杂度 O(1)
+    function Find(target, array) {
+      if (!target) {
+        return false
+      }
+      for (let i = 0, len1 = array.length; i < len1; i++) {
+        for (let j = 0, len2 = array[i].length; j < len2; j++) {
+          if (array[i][j] === target) {
+            return true
+          }
+        }
+      }
+      return false
+    }
+    // 方案 2：二分搜索
+    function Find (target, array) {
+      if (!array) {
+        return false
+      }
+      // 行数
+      let m = array.length
+      // 列数
+      let n = array[0].length
+      // 分割元素的下标，首先取为右上角的元素
+      let row = 0
+      let column = n - 1
+      while (column >= 0 && row < n) {
+        // 如果 target 小于分割元素，排除分割元素所在的列，将列数减 1
+        if (target < array[row][column]) {
+          column--
+          // 如果 target 大于分割元素，排除分割元素所在的行，将列数加 1
+        } else if (target > array[row][column]) {
+          row++
+        } else {
+          return true
+        }
+      }
+      return false
+    }
+  </script>
+</body>
+</html>

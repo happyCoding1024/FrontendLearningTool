@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从尾到头打印链表</title>
+</head>
+<body>
+  <script>
+    /**
+     * 三种思路：
+     * 1）遍历到一个数组中，然后反转这个数组
+     * 2）利用后序遍历的思想进行递归（链表的形式类似于树中只有左节点这种情况）
+     * 3）反转链表后遍历
+     **/
+    // 方法1：遍历到一个数组然后翻转这个数组
+    function printListFromTailToHead (head) {
+      let arr = []
+      let current = head
+      // 这里已经做了边界检查，如果 head 为 null 那么会返回空数组，注意要返回空数组而不是 null，否则会不通过
+      while (current !== null) {
+        arr.push(current.val)
+        current = current.next
+      }
+      return arr.reverse()
+    }
+
+    // 方法2：利用后序遍历的思想进行递归
+    // 有待提高的地方：在内部不再定义新的函数如何实现
+    function printListFromTailToHead (head) {
+      let arr = []
+      printListFromTailToHeadNode(head)
+      function printListFromTailToHeadNode (head) {
+        if (head !== null) {
+          printListFromTailToHeadNode(head.next)
+          arr.push(head.val)
+        }
+      }
+      return arr
+    }
+
+    // 方法3：反转链表后遍历
+    function printListFromTailToHead (head) {
+      let arr = []
+      let cur = head
+      let pre = null
+      let next
+      while (cur !== null) {
+        next = cur.next
+        cur.next = pre
+        pre = cur
+        cur = next
+      }
+      while (pre) {
+        arr.push(pre.val)
+        pre = pre.next
+      }
+      return arr
+    }
+  </script>
+</body>
+</html>

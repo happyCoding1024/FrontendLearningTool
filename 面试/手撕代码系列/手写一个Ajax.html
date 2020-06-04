@@ -8,7 +8,7 @@
 <body>
   <script>
     // 使用 Promise 实现发送 GET 请求
-    function myAjax(url) {
+    function myAjax (url) {
       return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest()
         xhr.open('GET', url, true) // true表示异步，false表示同步
@@ -28,7 +28,5 @@
       console.log(res)
     })
   </script>
-  
-  
 </body>
 </html>

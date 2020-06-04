@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斐波那契数列</title>
+</head>
+<body>
+  <script>
+    /**
+     * 思路：
+     * 注意和 Fibonacci 的定义不完全一样，题目中是从 0 开始的
+     * 1）利用递归的方式很容易实现
+     * 2）也可以利用循环的方式实现，和跳n级台阶时是一样的
+     * */
+    // 方法1：利用递归
+    // 使用递归方法时超出了判题系统的内存限制
+    // function Fibonacci (n) {
+    //   if (n === 0) {
+    //     return 0
+    //   }
+    //   if (n === 1 || n === 2) {
+    //     return 1
+    //   }
+    //   return Fibonacci(n - 1) + Fibonacci(n - 2)
+    // }
+
+    // 方法2：采用循环的方式
+    function Fibonacci (n) {
+      if (n < 0 || n === 0) {
+        return 0
+      } else if (n === 1) {
+        return 1
+      } else {
+        let pre = 0
+        let cur = 1
+        for (let i = 2; i <= n; ++i) {
+          let temp = cur
+          cur = cur + pre
+          pre = temp
+        }
+        return cur
+      }
+    }
+    
+    // 测试代码
+    console.log(Fibonacci(4))
+  </script>
+</body>
+</html>

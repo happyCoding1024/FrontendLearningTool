@@ -7,7 +7,12 @@
 </head>
 <body>
   <script>
-    
+    /**
+     * 注意：
+     * 1）在给树插入节点时假设树是二叉搜索树，即左节点小于父节点，右节点大于父节点，在遍历算法中没有这个前提条件
+     * 2）
+     * 3）
+    */
     class Node {
       constructor (element) {
         this.key = element
@@ -26,8 +31,35 @@
     Object.assign(BinarySearchTree.prototype, {
       inOrderTraverse,
       postOrderTraverse,
-      preOrderTraverse
+      preOrderTraverse,
+      insert
     })
+
+    // 向树中插入一个节点
+    function insert (key) {
+      const node = new Node(key)
+      if (this.root === null) {
+        this.root = node
+      } else {
+        insertNode(this.root, node)
+      }
+
+      function insertNode (node, newNode) {
+        if (newNode.key < node.key) {
+          if (node.left === null) {
+            node.left = newNode
+          } else {
+            insertNode(node.left, newNode)
+          }
+        } else {
+          if (node.right === null) {
+            node.right = newNode
+          } else {
+            insertNode(node.right, newNode)
+          }
+        }
+      }
+    }
 
     // 中序遍历
     function inOrderTraverse (callback) {
@@ -41,7 +73,7 @@
       }
     }
 
-    // 先序遍历
+    // 先序遍历(前序遍历)
     function preOrderTraverse (callback) {
       preOrderTraverseNode(this.root, callback)
       function preOrderTraverseNode (node, callback) {
@@ -64,6 +96,13 @@
         }
       }
     }
+
+    // 测试代码
+    const tree = new BinarySearchTree()
+    tree.insert(11)
+    tree.insert(10)
+    tree.insert(12)
+    console.log(tree)
   </script>
 </body>
 </html>

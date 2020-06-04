@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 2020年6月1日（获取元素的所有子节点）</title>
+</head>
+<body>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <script>
+    // const ul = document.getElementsByTagName('ul')[0]
+    // let ulChildNodes = ul.childNodes
+    // console.log(ulChildNodes)
+    // // 遍历子元素
+    // // 首先将类数组转换为数组
+    // ulChildNodes = Array.from(ulChildNodes)
+    // console.log(ulChildNodes)
+    // ulChildNodes.forEach((item, index) => {
+    //   // nodeType === 1 表示是 Element 节点
+    //   if (item.nodeType === 1) {
+    //     console.log(item)
+    //   }
+    // })
+
+    // 使用 children 属性
+    const ul = document.getElementsByTagName('ul')[0]
+    let ulChildNodes = ul.children
+    console.log(ulChildNodes)
+    // 遍历子元素
+    // 首先将类数组转换为数组
+    ulChildNodes = Array.from(ulChildNodes)
+    console.log(ulChildNodes)
+    ulChildNodes.forEach((item, index) => {
+      // nodeType === 1 表示是 Element 节点
+      if (item.nodeType === 1) {
+        console.log(item)
+      }
+    })
+  </script>
+</body>
+</html>

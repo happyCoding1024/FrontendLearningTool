@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实现图片懒加载</title>
+  <style>
+    .img-list img {
+      height: 200px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="img-list">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./2.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+    <img src="" lazyLoad="true" data-original="./1.png">
+  </div>
+  <script>
+    // 可视区域的高度
+    const viewHeight = document.documentElement.clientHeight
+    const div = document.getElementsByClassName('img-list')[0]
+    console.log(div.getAttribute('class'))
+    function load () {
+      let imgArr = document.querySelectorAll('img[data-original][lazyLoad]')
+      imgArr.forEach((item, index) => {
+        // 获取 img 元素距离视口的距离
+        let rect = item.getBoundingClientRect()
+        if (rect.bottom > 0 && rect.top < viewHeight) {
+          let src = item.getAttribute('data-original')
+          item.setAttribute('src', `${src}`)
+        }
+      })
+    }
+    // load()
+    document.addEventListener('scroll', load)
+  </script>
+</body>
+</html>

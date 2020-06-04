@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用两个栈实现队列</title>
+</head>
+<body>
+  <script>
+    /**
+     * 思路：
+     * 队列的 push 操作比较简单，直接 push 到一个栈中就可以了，关键在于 pop 操作，队列的 pop 操作要遵循
+     * 先进先出的原则，如果直接在那个栈中 pop 的话，那么就不是先进先出了，所以这个时候要将那个栈中的内容 push
+     * 到另一个栈中，再将另一个栈中的内容 pop 出去就是先进先出的规则了。
+     * 还要一个问题需要注意：例如现在往队列中push进去了1，2，3，然后此时需要 pop，那么需要将 1，2，3 pop 到另一个栈中
+     * 然后再 pop 出 1，这个时候假设队列中又 push 进去了一个 4，此时接着又要 pop，那么这个 4 并不能 pop 到另一个栈中
+     * 因为如果 pop 到另一个栈中的话那么队列再 pop 的时候，pop 出去的就是 4 了。
+     * 因此在队列 pop 的时候需要查看一些另一个栈中是否是空的，如果是空的那么就将那个栈中的元素pop进去，如果不是空的，那么
+     * 就直接pop另一个栈中的内容，直到这个栈中为空才向这个栈中pop内容。
+     * */
+    class Stack {
+      constructor () {
+        this.stack = new Array()
+      }
+      // 入栈
+      push (node) {
+        this.stack.push(node)
+      }
+      // 出栈
+      pop () {
+        if (!this.isEmpty()) {
+          return this.stack.pop()
+        }
+      }
+      // 检测是否为空
+      isEmpty () {
+        return this.stack.length === 0
+      }
+    }
+    let stack1 = new Stack()
+    let stack2 = new Stack()
+    function push(node) {
+    // write code here
+      stack1.push(node)
+    }
+    function pop() {
+    // write code here
+      if (!stack2.isEmpty()) {
+        return stack2.pop()
+      } else {
+        while (!stack1.isEmpty()) {
+          stack2.push(stack1.pop())
+        }
+        if (!stack2.isEmpty()) {
+          return stack2.pop()
+        }
+      }
+    }
+  </script>
+</body>
+</html>

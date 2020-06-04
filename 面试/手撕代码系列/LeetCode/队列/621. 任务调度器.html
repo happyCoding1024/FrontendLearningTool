@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任务调度器</title>
+</head>
+<body>
+  <script>
+    function taskAttemper (task, n) {
+      let obj = {}
+      let max = 0
+      let maxTask = ''
+      let result = ''
+      // 对输入任务列表进行排序
+      task = task.sort()
+      // 分类存储
+      task.forEach((item, index) => {
+        if (obj[item]) {
+          obj[item]++
+          if (obj[item] > max) {
+            max = obj[item]
+            maxTask = item
+          }
+        } else {
+          obj[item] = 1
+        }
+      })
+
+      // 输出结果
+      while (1) {
+        if (!obj[maxTask]) {
+          break
+        }
+        let keys = Object.keys(obj)
+        let tmp = []
+        for (let i = 0; i < n + 1; i++) {
+          let max = 0
+          let key
+          let pos
+          keys.forEach((item, index) => {
+            if (obj[item] > max) {
+              max = obj[index]
+              key = item
+              pos = index
+            }
+          })
+          if (key) {
+            tmp.push(key)
+            // 删除掉这个 key 防止下一次循环时还是它的数量最多再次使用它
+            keys.splice(pos, 1)
+            obj[key]--
+            if (obj[key] === 0) {
+              delete obj[key]
+            }
+          } else {
+            break
+          }
+        }
+        result += tmp.join('').padEnd(n + 1, '-')
+      }
+      result = result.replace(/-+$/, '')
+      return result
+    }
+    // 测试代码
+    const task = ['A', 'A', 'A', 'B', 'B', 'B']
+    let n = 2
+    console.log(taskAttemper(task, n))
+    console.log(taskAttemper(task, n).length)
+  </script>
+</body>
+</html>

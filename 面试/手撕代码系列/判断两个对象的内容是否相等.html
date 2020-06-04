@@ -10,15 +10,15 @@
     function compareObject (obj1, obj2) {
       // 递归终止条件，当 obj1 或 obj2 不是对象时，此时就可以进行判断了
       if (typeof obj1 !== 'object' || typeof obj2 !== 'object') {
-          if (obj1 === obj2) {
-            return true
-          } else {
-            return false
-          }
+        if (obj1 === obj2) {
+          return true
+        } else {
+          return false
+        }
       }
       // 获取对象的自有属性组成的数组
       const obj1PropsArr = Object.getOwnPropertyNames(obj1)
-      const obj2PropsArr = Object.getOwnPropertyNames(obj2) 
+      const obj2PropsArr = Object.getOwnPropertyNames(obj2)
       // 如果数组的长度不相等，那么说明对象属性的个数都不同，返回 false
       if (obj1PropsArr.length !== obj2PropsArr.length) {
         return false
@@ -45,61 +45,61 @@
       return true
     }
     const obj1 = {
-        'q': 'cnblogs.com/zhangguicheng/',
-        'w': 'https://space.bilibili.com/421338049',
-        'e': 'github.com/happyCoding1024',
-        'r': 'www.nowcoder.com',
-        't': 'leetcode-cn.com',
-        'y': 'developer.mozilla.org/zh-CN',
-        'u': 'www.imooc.com/',
-        'i': 'www.jianshu.com/',
-        'o': 'www.w3school.com.cn',
-        'p': 'www.zhihu.com',
-        'a': 'segmentfault.com',
-        's': 'juejin.im',
-        'd': 'www.csdn.net/',
-        'f': 'www.qq.com',
-        'g': 'www.ruanyifeng.com/',
-        'h': 'www.baidu.com',
-        'j': 'jianshu.com',
-        'k': 'dev.mysql.com/',
-        'l': 'www.cnki.net/',
-        'z': 'cn.vuejs.org/',
-        'x': 'reactjs.org/',
-        'c': 'www.babeljs.cn/',
-        'v': 'www.iconfont.cn/',
-        'b': 'webpack.js.org/',
-        'n': 'jquery.com/',
-        'm': 'regexper.com/'
-      };
-    const obj2 = {
-        'q': 'cnblogs.com/zhangguicheng/',
-        'w': 'https://space.bilibili.com/421338049',
-        'e': 'github.com/happyCoding1024',
-        'r': 'www.nowcoder.com',
-        't': 'leetcode-cn.com',
-        'y': 'developer.mozilla.org/zh-CN',
-        'u': 'www.imooc.com/',
-        'i': 'www.jianshu.com/',
-        'o': 'www.w3school.com.cn',
-        'p': 'www.zhihu.com',
-        'a': 'segmentfault.com',
-        's': 'juejin.im',
-        'd': 'www.csdn.net/',
-        'f': 'www.qq.com',
-        'g': 'www.ruanyifeng.com/',
-        'h': 'www.baidu.com',
-        'j': 'jianshu.com',
-        'k': 'dev.mysql.com/',
-        'l': 'www.cnki.net/',
-        'z': 'cn.vuejs.org/',
-        'x': 'reactjs.org/',
-        'c': 'www.babeljs.cn/',
-        'v': 'www.iconfont.cn/',
-        'b': 'webpack.js.org/',
-        'n': 'jquery.com/',
-        'm': 'regexper.com/'
-      };
+      'q': 'cnblogs.com/zhangguicheng/',
+      'w': 'https://space.bilibili.com/421338049',
+      'e': 'github.com/happyCoding1024',
+      'r': 'www.nowcoder.com',
+      't': 'leetcode-cn.com',
+      'y': 'developer.mozilla.org/zh-CN',
+      'u': 'www.imooc.com/',
+      'i': 'www.jianshu.com/',
+      'o': 'www.w3school.com.cn',
+      'p': 'www.zhihu.com',
+      'a': 'segmentfault.com',
+      's': 'juejin.im',
+      'd': 'www.csdn.net/',
+      'f': 'www.qq.com',
+      'g': 'www.ruanyifeng.com/',
+      'h': 'www.baidu.com',
+      'j': 'jianshu.com',
+      'k': 'dev.mysql.com/',
+      'l': 'www.cnki.net/',
+      'z': 'cn.vuejs.org/',
+      'x': 'reactjs.org/',
+      'c': 'www.babeljs.cn/',
+      'v': 'www.iconfont.cn/',
+      'b': 'webpack.js.org/',
+      'n': 'jquery.com/',
+      'm': 'regexper.com/'
+    }
+const obj2 = {
+      'q': 'cnblogs.com/zhangguicheng/',
+      'w': 'https://space.bilibili.com/421338049',
+      'e': 'github.com/happyCoding1024',
+      'r': 'www.nowcoder.com',
+      't': 'leetcode-cn.com',
+      'y': 'developer.mozilla.org/zh-CN',
+      'u': 'www.imooc.com/',
+      'i': 'www.jianshu.com/',
+      'o': 'www.w3school.com.cn',
+      'p': 'www.zhihu.com',
+      'a': 'segmentfault.com',
+      's': 'juejin.im',
+      'd': 'www.csdn.net/',
+      'f': 'www.qq.com',
+      'g': 'www.ruanyifeng.com/',
+      'h': 'www.baidu.com',
+      'j': 'jianshu.com',
+      'k': 'dev.mysql.com/',
+      'l': 'www.cnki.net/',
+      'z': 'cn.vuejs.org/',
+      'x': 'reactjs.org/',
+      'c': 'www.babeljs.cn/',
+      'v': 'www.iconfont.cn/',
+      'b': 'webpack.js.org/',
+      'n': 'jquery.com/',
+      'm': 'regexper.com/'
+    }
     console.log(compareObject(obj1, obj2))
   </script>
 </body>

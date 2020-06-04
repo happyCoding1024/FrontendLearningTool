@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画一个椭圆</title>
+</head>
+<body>
+  <section>
+    <style>
+      .tuoyuan {
+        height: 32px;
+        width: 16px;
+        /* border-raidus 可以有两个半径，第一个是椭圆短轴的半径，另一个是椭圆长轴的半径，当这两个分别是长度和宽度的一半时，就是一个椭圆，但是注意长宽不能相等，否则就是一个圆形了 */
+        border-radius: 50% / 50%;
+        background-color: pink;
+        transform: rotate(20deg) translateX(300px);
+      }
+    </style>
+    <h1>利用 border-radius</h1>
+    <div class="tuoyuan"></div>
+  </section>
+</body>
+</html>

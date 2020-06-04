@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <title>画0.5px宽度的线</title>
+  <style>
+    .border1px {
+      background-color: #000;
+      height: 1px;
+      margin-bottom: 30px;
+    }
+    .border_transform {
+      background-color: #000;
+      height: 1px;
+      transform: scaleY(0.5); 
+      transform-origin: 50% 100%;
+      margin-bottom: 30px;
+    }
+    .container {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      background-color: pink;
+    }
+    .inner {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      height: 200px;
+      width: 200px;
+      border: 1px solid #ccc;
+      transform: scale(0.5);
+      transform-origin: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="border1px"></div>
+  <div class="border_transform"></div>
+  <div class="container">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>

@@ -31,7 +31,7 @@
     // }
 
     // 扩展运算符
-    function flatten(arr) {
+    function flatten (arr) {
       while(arr.some(item=>Array.isArray(item))) {
           arr = [].concat(...arr);
       }

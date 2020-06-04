@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>替换空格</title>
+</head>
+<body>
+  <script>
+    function replaceSpace (str) {
+    // write code here
+      const reg = /\s/g
+      let str1 = str.replace(reg, '%20')
+      return str1
+    }
+    console.log(replaceSpace('We Are  Happy.'))
+  </script>
+</body>
+</html>

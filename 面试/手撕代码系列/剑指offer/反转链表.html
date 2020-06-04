@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>反转链表</title>
+</head>
+<body>
+  <script>
+    function ReverseList (pHead) {
+    // write code here
+      let pre = null
+      let cur = pHead
+      let next
+      if (pHead === null) {
+        return null
+      }
+      while (cur !== null) {
+        // 保存下一个节点，因为当前节点的 next 要发生变化
+        next = cur.next
+        cur.next = pre
+        pre = cur
+        cur = next
+      }
+      return pre
+    }
+  </script>
+</body>
+</html>

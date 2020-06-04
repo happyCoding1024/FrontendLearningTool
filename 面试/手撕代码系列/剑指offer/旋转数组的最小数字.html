@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旋转数组的最小数字</title>
+</head>
+<body>
+  <script>
+    /**
+     * 思路：
+     * 1）当然可以通过暴力解法，但是在面试的时候面试官肯定不会满意，还会追问你
+     * 2）虽然旋转数组并不是完全有序的，但是可以保证部分有序，那么就可以采用二分查找的思想。但是二分查找涉及的一个问题
+     * 就是 arr[mid] 和谁比较的问题，在有序数组中我们直接就可以和左右端点进行比较，并且比较完后立马就可以判断出所需查找的
+     * 值位于哪个区间。
+     * 但是对于旋转数组来说就不太好确定和哪个值进行比较了，不过我们可以尝试和右端点进行比较。
+     * 如果 arr[mid] > arr[right] 那么可以确定最小值在 [mid, right] 内
+     * 如果 arr[mid] < arr[right] 那么可以确定最小值在 [0, mid] 内
+     * 如果 arr[mid] = arr[right] 那么都有可能，例如 111101，最小值就在 [mid, right] 中，1101111,最小值就在 [0, mid] 中
+     * 所以这种情况下只有逐步缩小 right 的值
+     * */
+
+    function minNumberInRotateArray (rotateArray) {
+      let len = rotateArray.length
+      let mid
+      let right = len - 1
+      let left = 0
+      if (rotateArray.length === 0) {
+        return 0
+      }
+      // 因为是非递减数组，如果 array[left] < array[right]，那么说明 array[left] 就是最小值，可以写几个示例看一下
+      if (rotateArray[left] < rotateArray[right]) {
+        return rotateArray[left]
+      }
+      while (left < right) {
+        mid = Math.floor((left + right) / 2)
+        if (rotateArray[mid] < rotateArray[right]) {
+          right = mid
+        } else if (rotateArray[mid] > rotateArray[right]) {
+          left = mid + 1
+        } else {
+          // 当 array[mid] === array[right]时由于无法判断处于哪个区间，因此只好缩小范围
+          right--
+        }
+      }
+      // left 最终存放的是最小值，因为数组是非递减的，左端点的值一定是最小值。
+      return rotateArray[left]
+    }
+
+    const arr = [3, 4, 5, 2, 2, 3]
+    console.log(minNumberInRotateArray(arr))
+  </script>
+</body>
+</html>
