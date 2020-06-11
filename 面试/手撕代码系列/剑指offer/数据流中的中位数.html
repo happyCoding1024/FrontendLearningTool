@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>数据流中的中位数</title>
+</head>
+<body>
+  <script>
+    /**
+    * 题目链接：https://www.nowcoder.com/practice/9be0172896bd43948f8a32fb954e1be1?tpId=13&&tqId=11216&rp=1&ru=/activity/oj&qru=/ta/coding-interviews/question-ranking
+    * 思路：
+    * 看到这个问题的时候对于 insert 函数的作用不是很理解，其实在牛客上刷的这些题目只是让你将函数实现，上下的逻辑关系不用太关心。
+    * 它其实就是在不断地向数组里面插入数据
+    * 方法一：暴力解法
+    * 首先将数组进行排序，然后就可以很容易地取出中间的数
+    * 方法二：利用插入排序
+    * 既然 Insert 函数就是在向 arr 中插入数据，那么何不在插入的过程中就排序呢？这样当插入完成后 arr 就是一个有序数组了
+    */
+
+    // 方法一：暴力解法
+    // let arr = []
+    // function Insert (num) {
+    //   // write code here
+    //   arr.push(num)
+    // }
+    // function GetMedian () {
+    //   // write code here
+    //   arr.sort((a, b) => a - b)
+    //   let len = arr.length
+    //   let median = Math.floor(len / 2)
+    //   if (len % 2 === 0) {
+    //     return (arr[median - 1] + arr[median]) / 2
+    //   } else {
+    //     return arr[median]
+    //   }
+    // }
+
+    // 方法二：插入排序
+    let arr = []
+    function Insert (num) {
+      // write code here
+      arr.push(num)
+      let len = arr.length
+      let j = len - 1
+      while (j > 0 && arr[j] > arr[j - 1]) {
+        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]
+        j--
+      }
+    }
+    function GetMedian () {
+      // write code here
+      let len = arr.length
+      let median = Math.floor(len / 2)
+      if (len % 2 === 0) {
+        return (arr[median - 1] + arr[median]) / 2
+      } else {
+        return arr[median]
+      }
+    }
+  </script>
+</body>
+</html>

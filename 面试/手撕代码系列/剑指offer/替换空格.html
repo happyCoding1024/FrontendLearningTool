@@ -7,13 +7,28 @@
 </head>
 <body>
   <script>
-    function replaceSpace (str) {
+    // 方法一：利用正则表达式
+    function replaceSpace1 (str) {
     // write code here
       const reg = /\s/g
       let str1 = str.replace(reg, '%20')
       return str1
     }
-    console.log(replaceSpace('We Are  Happy.'))
+    console.log(replaceSpace1('We Are  Happy.'))
+
+    // 方法二：利用 for 循环
+    function replaceSpace2 (str) {
+      const arr = str.split('')
+      let str1 = ''
+      for (let i = 0, len = arr.length; i < len; i++) {
+        if (arr[i] === ' ') {
+          arr[i] = '%20'
+        }
+      }
+      str1 = arr.join('')
+      return str1
+    }
+    console.log(replaceSpace2('We are  Happy.'))
   </script>
 </body>
 </html>
