@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>矩形覆盖</title>
+</head>
+<body>
+  <script>
+    // 利用递归
+    // function rectCover (number) {
+    //   if (number === 1) {
+    //     return 1
+    //   }
+    //   if (number === 2) {
+    //     return 2
+    //   }
+    //   return rectCover(number - 1) + rectCover(number - 2)
+    // }
+
+    // 使用 for 循环
+    function rectCover (number) {
+      if (number === 0 || number === 1 || number === 2) {
+        return number
+      }
+      let n1 = 1
+      let n2 = 2
+      for (let i = 3; i <= number; i++) {
+        n2 = n1 + n2
+        n1 = n2 - n1
+      }
+      return n2
+    }
+
+    // 测试代码
+    console.log(rectCover(4))
+  </script>
+</body>
+</html>

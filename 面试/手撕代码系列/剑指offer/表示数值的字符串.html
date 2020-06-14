@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表示数值的字符串</title>
+</head>
+<body>
+  <script>
+    // s字符串
+    function isNumeric (s) {
+      // write code here
+      const reg = /[+-]?\d*([.]?\d+)?([eE][+-]?\d+)?/
+      console.log(s.match(reg)[0])
+      return s.match(reg)[0] === s
+    }
+
+    // 测试代码
+    const s = '-.123'
+    console.log(isNumeric(s))
+  </script>
+</body>
+</html>

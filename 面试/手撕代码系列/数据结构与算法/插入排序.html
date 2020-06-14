@@ -7,7 +7,9 @@
 </head>
 <body>
   <script>
-    function insertSort (arr) {
+    // 写法一
+    // eslint-disable-next-line no-unused-vars
+    function insertSort1 (arr) {
       for (let i = 0, len = arr.length; i < len; i++) {
         let j = i
         let temp = arr[i]
@@ -20,9 +22,21 @@
       return arr
     }
 
+    // 写法二
+    function insertSort2 (arr) {
+      for (let i = 0, len = arr.length; i < len; i++) {
+        let j = i
+        while (j > 0 && arr[j] < arr[j - 1]) {
+          [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]
+          j--
+        }
+      }
+      return arr
+    }
+
     // 测试代码
     let arr = [4, 2, 5, 2, 1]
-    console.log(insertSort(arr))
+    console.log(insertSort2(arr))
   </script>
 </body>
 </html>

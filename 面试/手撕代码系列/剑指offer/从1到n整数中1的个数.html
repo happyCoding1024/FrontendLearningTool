@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从1到n整数中1的个数</title>
+</head>
+<body>
+  <script>
+    /*
+    * 题目链接：https://www.nowcoder.com/practice/bd7f978302044eee894445e244c7eee6?tpId=13&&tqId=11184&rp=1&ru=/activity/oj&qru=/ta/coding-interviews/question-ranking
+    * 思路：
+    * 1）暴力解法
+    * 2）分别分析个位，十位，百位中1出现的次数，归纳总结出规律
+    */
+
+    // 方法一：暴力解法
+    // 通过遍历，然后将每个数转换为字符串再通过遍历找出1的个数
+    // function NumberOf1Between1AndN_Solution (n) {
+    //   // write code here
+    //   let count = 0
+    //   for (let num = 1; num <= n; num++) {
+    //     let str = num.toString()
+    //     for (let i = 0, len = str.length; i < len; i++) {
+    //       if (str[i] === '1') {
+    //         count++
+    //       }
+    //     }
+    //   }
+    //   return count
+    // }
+
+    // 方法二：通过个位，十位，百位上1的个数，归纳出规律
+    // eslint-disable-next-line camelcase
+    function NumberOf1Between1AndN_Solution (n) {
+      // write code here
+      let count = 0
+      let str = n.toString()
+      let len = str.length
+      if (len === 1) {
+        return 1
+      }
+      let wei = 10
+      for (let i = 1; i < len; i++) {
+        let k = n % (wei * 10)
+        count += Math.floor(n / (wei * 10)) * wei + (k >= wei ? (k - wei + 1) : 0)
+        wei *= 10
+      }
+      return count
+    }
+
+    // 测试代码
+    console.log(NumberOf1Between1AndN_Solution(10))
+  </script>
+</body>
+</html>

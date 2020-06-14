@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode80</title>
+</head>
+<body>
+  <script>
+    // 这道题目和数组去重不同的是数组中相同的元素最多可以保留两个
+    function unique (arr) {
+      let obj = {}
+      let result = []
+      for (let i = 0, len = arr.length; i < len; i++) {
+        obj[arr[i]] = 0
+      }
+      for (let i = 0, len = arr.length; i < len; i++) {
+        if (obj[arr[i]] < 2) {
+          result.push(arr[i])
+        }
+        obj[arr[i]]++
+      }
+      return result
+    }
+
+    // 测试代码
+    const arr = [1, 1, 2, 1, 2, 2, 3]
+    console.log(unique(arr))
+  </script>
+</body>
+</html>

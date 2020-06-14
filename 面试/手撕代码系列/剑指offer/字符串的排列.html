@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串的排列</title>
+</head>
+<body>
+  <script>
+    function Permutation (str) {
+      const len = str.length
+      const arr = str.split('')
+      const res = []
+      const obj = {}
+      const result = []
+      if (len === 0) {
+        return []
+      }
+      let range = (cur, subWord) => {
+        if (cur.length === len) {
+          return res.push(cur)
+        }
+        // 将数组中的每个元素都轮流当做第一项
+        subWord.forEach((item, index) => {
+          // 将数组拷贝一份
+          const temp = [].concat(subWord)
+          // 删除当前位置的元素，因为它被拿出来作为第一项了
+          temp.splice(index, 1)
+          // 将当前位置的元素存入到cur数组中
+          // 下面加不加 return 都可以因为需要的是外部声明的 res，并不是 range 函数的返回值
+          return range(cur.concat(item), temp)
+        })
+      }
+      range([], arr)
+      res.forEach((item, index) => {
+        // 数组去重，我上面的写法有可能会出现重复的元素，要加一个数组去重
+        if (!obj[item.join('')]) {
+          obj[item.join('')] = 1
+          result.push(item.join(''))
+        }
+      })
+      return result
+    }
+
+    // 测试代码
+    const str = 'aa'
+    console.log(Permutation(str))
+  </script>
+</body>
+</html>

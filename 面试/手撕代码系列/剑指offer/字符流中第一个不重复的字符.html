@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符流中第一个不重复的字符</title>
+</head>
+<body>
+  <script>
+    let map = {}
+    // Init module if you need
+    function Init () {
+      // write code here
+      // 如果不执行这条语句的话，在牛客上是不能通过的
+      map = {}
+    }
+    // Insert one char from stringstream
+    function Insert (ch) {
+      // write code here
+      map[ch] = map[ch] ? ++map[ch] : 1
+    }
+    // return the first appearence once char in current stringstream
+    function FirstAppearingOnce () {
+      // write code here
+      for (let key in map) {
+        if (map.hasOwnProperty(key)) {
+          if (map[key] === 1) {
+            return key
+          }
+        }
+      }
+      // 如果没有只出现一次的字符返回#
+      return '#'
+    }
+
+    // 测试代码
+    Insert('h')
+    console.log(FirstAppearingOnce())
+    Insert('e')
+    console.log(FirstAppearingOnce())
+    Insert('l')
+    console.log(FirstAppearingOnce())
+    Insert('l')
+    console.log(FirstAppearingOnce())
+    Insert('o')
+    console.log(FirstAppearingOnce())
+    Insert('w')
+    console.log(FirstAppearingOnce())
+    Insert('o')
+    console.log(FirstAppearingOnce())
+    Insert('r')
+    console.log(FirstAppearingOnce())
+    Insert('l')
+    console.log(FirstAppearingOnce())
+    Insert('d')
+    console.log(FirstAppearingOnce())
+  </script>
+</body>
+</html>

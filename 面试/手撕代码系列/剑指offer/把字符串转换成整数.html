@@ -1,0 +1,30 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"></meta>
+  <title>把字符串转换成整数</title>
+</head>
+<body>
+  <script>
+    function StrToInt(str) {
+        // write code here
+        let result = ''
+        const pattern = /([+-]?)(\d+)/
+        const arr = str.match(pattern)
+        if (arr[0] === str) {
+          if (arr[1] === '-') {
+            result = `-${arr[2]}`.trim()
+          } else {
+            result = arr[2].trim()
+          }
+          return result
+        } else {
+          return 0
+        }
+    }
+
+    // 测试代码
+    console.log(StrToInt('1a33'))
+  </script>
+</body>
+</html>
