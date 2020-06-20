@@ -41,7 +41,7 @@ typora 软件截图
 
 ### 电子书
 
-[电子书下载](/doc/use/frontendLearningMaterial.md)
+[电子书下载](/file)
 
 ### 视频资源
 
