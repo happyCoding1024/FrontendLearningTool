@@ -9,12 +9,12 @@
   <script>
 
     // 利用 reduce
-    // function flatten(arr) {  
-    //   return arr.reduce((result, item)=> {
-    //     // 递归终止条件 Array.isArray(item) ? flatten(item) : item
-    //     return result.concat(Array.isArray(item) ? flatten(item) : item);
-    //   }, []);
-    // }
+    function flatten(arr) {  
+      return arr.reduce((result, item)=> {
+        // 递归终止条件 Array.isArray(item) ? flatten(item) : item
+        return result.concat(Array.isArray(item) ? flatten(item) : item);
+      }, []);
+    }
 
     //  toString & split
     // function flatten (arr) {
