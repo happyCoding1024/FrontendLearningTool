@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>集合</title>
+</head>
+<body>
+  <script>
+    // 集合
+    class Set {
+      constructor () {
+        // 也可以利用数组来实现，但是对象的属性不会是两个不同的值
+        // 而集合也不允许有相同的值出现，正好保证了这一点。
+        // 此外使用对象时属性名和值是同一个，即 item[value] = value
+        this.items = {}
+      }
+    }
+    
+    // 为 Set 添加方法
+    Object.assign(Set.prototype, {
+      has,
+      add,
+      remove,
+      clear,
+      size,
+      values,
+      union
+    })
+
+    // 判断一个元素是否存在
+    // 由于在 add 方法中属性和值是相同的，因此可以判断属性在 items 对象中
+    // 是否存在即可
+    function has (value) {
+      return this.items.hasOwnProperty(value)
+    }
+
+    // 向集合中添加元素
+    function add (value) {
+      // 确保当前元素在集合中不存在才向里面添加
+      if (!this.items[value]) {
+        this.items[value] = value
+        return true
+      }
+      return false
+    }
+
+    // 从集合中删除元素
+    // 其实移除的应该是值，但是由于属性和值是相同的，因此溢出items对象的属性即可
+    function remove (value) {
+      // 如果集合中有这个元素
+      if (this.has(value)) {
+        delete this.items[value]
+        return true
+      }
+      return false
+    }
+
+    // 移除集合中的所有元素
+    function clear () {
+      this.items = {}
+    }
+
+    // 集合中元素的个数
+    function size () {
+      return Object.keys(this.items).length
+    }
+
+    // 集合中所有的元素组成的数组
+    function values () {
+      const values = []
+      const keys = Object.keys(this.items)
+      for (let i = 0, len = keys.length; i < len; i++) {
+        values.push(this.items[keys[i]])
+      }
+      return values
+    }
+
+    // 并集
+    function union (otherSet) {
+      let unionSet = new Set()
+      let values = this.values()
+      values.forEach(item => {
+        unionSet.add(item)
+      })
+      values = otherSet.values()
+      values.forEach(item => {
+        unionSet.add(item)
+      })
+      return unionSet
+    }
+
+    // 交集
+    function 
+
+    // 测试代码
+    let set1 = new Set()
+    let set2 = new Set()
+    set1.add(1)
+    set2.add(2)
+    console.log(set1.union(set2))
+  </script>
+</body>
+</html>

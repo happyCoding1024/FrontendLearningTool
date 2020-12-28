@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode75sortColors</title>
+</head>
+<body>
+  <script>
+    function sortColors (nums) {
+      const count = []
+      let index = 0
+      for (let i = 0; i < 3; i++) {
+        count[i] = 0
+      }
+      for (let i = 0, len = nums.length; i < len; i++) {
+        count[nums[i]]++
+      }
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < count[i]; j++) {
+          nums[index++] = i
+        }
+      }
+      return nums
+    }
+
+    // 测试代码
+    const arr = [0, 1, 0, 2, 1, 0]
+    console.log(sortColors(arr))
+  </script>
+</body>
+</html>

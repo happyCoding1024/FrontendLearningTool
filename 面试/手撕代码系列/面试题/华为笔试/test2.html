@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串换行显示</title>
+</head>
+<body>
+  <script>
+    let str = 'hello'
+    let maxLine = 2
+    let arr = str.split('')
+    let res = ''
+    let num = 0
+    for (let i = 0, len = arr.length; i < len; i++) {
+      if (i === (len - 1)) {
+        if (num % maxLine === 0) {
+          res += `{${arr[i]}}`
+        } else {
+          res += `${arr[i]}}`
+        }
+      } else if (i === 0) {
+        res += `{${arr[i]}`
+        num++
+      } else if (num % maxLine === 0) {
+        res += `${arr[i]}-}\n{`
+        num += 2
+      } else {
+        res += `${arr[i]}`
+        num++
+      }
+    }
+    console.log(res)
+  </script>
+</body>
+</html>
