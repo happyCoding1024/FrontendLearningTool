@@ -59,9 +59,9 @@ typora 软件截图
 
 - 在 [github issues](https://github.com/happyCoding1024/FrontendLearningTool/issues) 提交问题
 
-- [博客园 codingOrange](https://www.cnblogs.com/zhangguicheng/)
+- [博客园 前端旧约](https://www.cnblogs.com/zhangguicheng/)
 
-- [b站 codingOrange](https://space.bilibili.com/421338049)
+- [b站 前端旧约](https://space.bilibili.com/421338049)
 
 
 
