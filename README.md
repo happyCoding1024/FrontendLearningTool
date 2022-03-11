@@ -6,13 +6,13 @@
 
 > 志存高远，厚积薄发。
 
-初学前端，记录所学，所思，所得，和大家分享前端（不止前端）学习路上的点点滴滴。
+记录所学，所思，所得，和大家分享前端（不止前端）学习路上的点点滴滴。
 
 ## 文章
 
 记录了学习过程中的一些笔记和在博客园上发表过的文章，其中有些文章是原创，有些文章是转载，转载文章均已注明原文链接。
 
-推荐：[前端每日知识点分享(总结版 每日更新)](/面试/前端每日知识点分享(总结版).md)
+推荐：[前端每日知识点分享(总结版)](/面试/前端每日知识点分享(总结版).md)(工作之后断更了，自罚三杯，近期决定恢复起来，和往常一样b站动态也会同步)
 
 查看方式
 
@@ -21,6 +21,7 @@
 - 将此仓库 clone 到本地，然后使用 Markdown 编辑软件进行阅读。
 
 > 强烈推荐一款 Markdown编辑软件 typora ，不仅免费，而且实用，方便，最重要的是颜值还高，再搭配 Gitbook，写完直接就可以当做书来看了，作者十分喜欢 Gitbook 和 typora 这两个黄金搭档。
+最近笔者慢慢转向 Notion 了，使用体验也非常不错，推荐推荐！
 
 typora 软件截图
 
@@ -43,12 +44,6 @@ typora 软件截图
 
 [电子书下载](/file)
 
-### 视频资源
-
-[慕课网资源](/doc/use/moocLesson.md)
-
-[黑马](/doc/use/heimaLesson.md)
-
 ## 联系作者
 
 如果您发现任何问题，希望可以抽时间告诉作者，感谢您的贡献，非常感谢。
@@ -57,11 +52,11 @@ typora 软件截图
 
 联系方式：
 
-- 在 [github issues](https://github.com/happyCoding1024/FrontendLearningTool/issues) 提交问题
+- [github issues](https://github.com/happyCoding1024/FrontendLearningTool/issues)
 
-- [博客园 codingOrange](https://www.cnblogs.com/zhangguicheng/)
+- [博客园 前端旧约](https://www.cnblogs.com/zhangguicheng/)
 
-- [b站 codingOrange](https://space.bilibili.com/421338049)
+- [b站 前端旧约](https://space.bilibili.com/421338049)
 
 
 
