@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // JSONP
+    function JSONP({  
+      url,
+      params,
+      callbackKey,
+      callback
+    }) {
+      // 唯一 id，不存在则初始化
+      JSONP.callbackId = JSONP.callbackId || 1
+      params = params || {}
+        // 传递的 callback 名，和下面预留的一致
+      params[callbackKey] = `JSONP.callbacks[${JSONP.callbackId}]`
+        // 不要污染 window
+      JSONP.callbacks = JSONP.callbacks || []
+        // 按照 id 放置 callback
+      JSONP.callbacks[JSONP.callbackId] = callback
+      const paramKeys = Object.keys(params)
+      const paramString = paramKeys
+        .map(key => `${key}=${params[key]}`)
+        .join('&')
+      const script = document.createElement('script')
+      script.setAttribute('src', `${url}?${paramString}`)
+      document.body.appendChild(script)
+        // id 占用，自增
+      JSONP.callbackId++
+    }
+
+    // 调用JSONP
+    // 请求的地址为 http://s.weibo.com/ajax/jsonp/suggestion?key=test&_cb=JSONP.callbacks[1]
+    JSONP({  
+      url: 'http://s.weibo.com/ajax/jsonp/suggestion',
+      params: {
+        key: 'test',
+      },
+      callbackKey: '_cb',
+      callback(result) {
+        console.log(result.data)
+      }
+    })
+
+    // 请求的地址为 http://s.weibo.com/ajax/jsonp/suggestion?key=excited&_cb=JSONP.callbacks[2]
+    JSONP({  
+      url: 'http://s.weibo.com/ajax/jsonp/suggestion',
+      params: {
+        key: 'excited',
+      },
+      callbackKey: '_cb',
+      callback(result) {
+        console.log(result.data)
+      }
+    })
+
+    /**
+     * 上面的代码仍然存在一个小问题，
+
+        ```js
+        JSONP({  
+          url: 'http://s.weibo.com/ajax/jsonp/suggestion',
+          params: {
+            a: '545&b=3'
+            b: '5',
+          },
+          callbackKey: '_cb',
+          callback(result) {
+            console.log(result.data)
+          }
+        })
+        ```
+
+        会导致 a 的内容直接被拼写进字符串，导致覆盖了 b 的值，而用户真的只是想让 a 的值为 trdgd&b=2 而已。解决方案也简单，进行 URI 编码即可，encodeURIComponent('trdgd&b=2') 的结果为 trdgd%26b%3D2。即将上面参数处理的部分改为
+
+        ```js
+        const paramString = paramKeys  
+          .map(key => `${key}=${encodeURIComponent(params[key])}`)
+          .join('&')
+        ```
+
+        这里值得一提的是，由于最终的 URL 不能包含 ASCII 码以外的字符，所以其实当使用中文或者特殊字符时其实会被自动编码。而 +，空格，/，?，%，#，&，= 等字符在 URL 中则会出现歧义，只有手动编码后才能让服务器端正确解析。
+     * /
+  </script>
+</body>
+</html>
