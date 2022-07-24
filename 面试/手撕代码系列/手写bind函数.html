@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写bind函数</title>
+</head>
+<body>
+  <script>
+    function bind1(obj, ...rest) {
+      // 被调用的函数
+      const fn = this;
+
+      return () => {
+        fn.apply(obj, rest);
+      }
+    }
+
+    // 这一步一定要注意，不加在Function的prototype上就不是bind的真正实现
+    Function.prototype.bind1 = bind1;
+
+    // 测试代码
+    function fn1(a, b) {
+      console.log('this is ', this);
+      console.log(this.x); // 100
+      console.log('传入的值 ' + a + '和' + b); // 传入的值 10 和 20
+      return 'this is fn1'; // this is fn1
+    }
+
+    const fn2 = fn1.bind1({ x: 100 }, 10, 20);
+    fn2();
+  </script>
+</body>
+</html>

@@ -35,6 +35,35 @@
       
       const obj2 = deepClone(obj1)
       console.log(obj2)
+
+
+    // 手写深拷贝
+    function deepClone(obj) {
+      if (typeof obj !== 'object' || obj === null) {
+        return obj;
+      }
+
+      let result = obj instanceof Array ? [] : {};
+
+      for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          result[key] = deepClone(key);
+        }   
+      }
+
+      return result;
+    }
+
+    const obj11 = {
+      a: 10,
+      b: {
+        c: 20,
+      }
+    }
+
+    const obj22 = deepClone(obj11);
+
+    console.log(obj22);
     </script>
   </body>
 </html>
