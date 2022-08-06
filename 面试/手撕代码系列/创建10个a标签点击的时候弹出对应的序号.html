@@ -22,20 +22,51 @@
 
     // 方法2：利用闭包
     // 参考《JS高级程序设计》P181
-    function f2 () {
-      let i, aElem
-      for (i = 0; i < 10; i++) {
-        aElem = document.createElement('a')
-        aElem.innerHTML = `${i} <br>`
-        document.body.appendChild(aElem)
-        aElem.onclick = (function (num) {
-          return function () {
-            alert(num)
-          }
-        })(i)
+    // function f2 () {
+    //   let i, aElem
+    //   for (i = 0; i < 10; i++) {
+    //     aElem = document.createElement('a')
+    //     aElem.innerHTML = `${i} <br>`
+    //     document.body.appendChild(aElem)
+    //     aElem.onclick = (function (num) {
+    //       return function () {
+    //         alert(num)
+    //       }
+    //     })(i)
+    //   }
+    // }
+    // f2()
+
+
+    function fn1() {
+      for (let i = 0; i < 10; i++) {
+        const a = document.createElement('a');
+        a.innerHTML = `<h1>${i}<h1>`;
+        a.addEventListener('click', () => {
+          alert(i);
+        });
+        document.body.appendChild(a);
       }
     }
-    f2()
+
+    fn1();
+
+    function fn2() {
+      let i;
+      for (i = 0; i < 10; i++) {
+        (function fn (i) {
+          const a = document.createElement('a');
+          a.innerHTML = `<h1>${i}<h1>`;
+          a.addEventListener('click', () => {
+            alert(i);
+          });
+          document.body.appendChild(a);
+        })(i);
+      }
+    }
+
+    fn2();
+
   </script>
 </body>
 </html>
