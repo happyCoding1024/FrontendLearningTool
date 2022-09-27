@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>普通树</title>
+</head>
+<body>
+  <script>
+    const tree = {
+      val: 'a',
+      children: [
+          {
+              val: 'b',
+              children: [
+                  {
+                      val: 'd',
+                      children: [],
+                  },
+                  {
+                      val: 'e',
+                      children: [],
+                  }
+              ],
+          },
+          {
+              val: 'c',
+              children: [
+                  {
+                      val: 'f',
+                      children: [],
+                  },
+                  {
+                      val: 'g',
+                      children: [],
+                  },
+                  {
+                      val: 'h',
+                      children: [],
+                  }
+              ],
+          }
+      ],
+  };
+
+
+  // 深度优先遍历
+  const dfs = (tree) => {
+    console.log(tree.val);
+
+    for (let i = 0; i < tree.children.length; i++) {
+      dfs(tree.children[i]);
+    }
+  }
+
+  // dfs(tree);
+
+
+  // 广度优先遍历
+  const bfs = (tree) => {
+    const queue = [tree];
+
+    while(queue.length > 0) {
+      const n = queue.shift();
+      console.log(n.val);
+
+      n?.children.forEach(element => {
+        queue.push(element);
+      });
+    }
+  }
+
+  bfs(tree);
+  </script>
+</body>
+</html>
