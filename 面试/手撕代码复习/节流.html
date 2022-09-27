@@ -7,20 +7,54 @@
   <title>节流</title>
 </head>
 <body>
+  <div id="container">hello</div>
+  <div>hello</div>
+  <div>hello</div>
+  <div>hello</div>
+  <div>hello</div>
+  <div>hello</div>
+  <div>hello</div>
+
   <script>
-    function throttle(fn, duration) {
+
+    // 写法 1
+    function throttle1(fn, duration) {
       let timer = null;
       return function () {
+        console.log('function this === ', this);
         if (timer) {
           return;
         }
 
-        timer = setTimeout(function () {
+        timer = setTimeout(() => {
           fn.apply(this, arguments);
           timer = null; 
         }, duration);
       }
     }
+
+    // 写法 2
+    function throttle2(fn, duration) {
+      let throttleFlag = false;
+      
+      return () => {
+        if (!throttleFlag) {
+          // 注意不能加return
+          setTimeout(() => {
+            fn.apply(this, arguments);
+            throttleFlag = false;
+          }, duration);
+        }
+
+        throttleFlag = true;
+      }
+    }
+
+    const cbThrottle = throttle2(function () {
+      console.log(this);
+    }, 1000);
+
+    document.addEventListener('scroll', cbThrottle);
   </script>
 </body>
 </html>
