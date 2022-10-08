@@ -32,7 +32,8 @@
       inOrderTraverse,
       postOrderTraverse,
       preOrderTraverse,
-      insert
+      insert,
+      preOrderTraverseNonRecursion
     })
 
     // 向树中插入一个节点
@@ -61,7 +62,7 @@
       }
     }
 
-    // 中序遍历
+    // 递归版中序遍历
     function inOrderTraverse (callback) {
       inOrderTraverseNode(this.root, callback)
       function inOrderTraverseNode (node, callback) {
@@ -73,7 +74,7 @@
       }
     }
 
-    // 先序遍历(前序遍历)
+    // 递归版先序遍历(前序遍历)
     function preOrderTraverse (callback) {
       preOrderTraverseNode(this.root, callback)
       function preOrderTraverseNode (node, callback) {
@@ -85,7 +86,7 @@
       }
     }
 
-    // 后序遍历
+    // 递归版后序遍历
     function postOrderTraverse (callback) {
       postOrderTraverseNode(this.root, callback)
       function postOrderTraverseNode (node, callback) {
@@ -97,12 +98,28 @@
       }
     }
 
+    // 非递归版先序遍历
+    // 模拟函数递归调用的过程，注意根左右，进栈的时候是右子树先进去，因为先进后出
+    function preOrderTraverseNonRecursion() {
+      if (!this.root) return;
+      const stack = [this.root];
+      
+      while(stack.length) {
+        const n = stack.pop();
+        console.log(n.key);
+        if (n.right) stack.push(n.right);
+        if (n.left) stack.push(n.left);
+      }
+    } 
+
     // 测试代码
     const tree = new BinarySearchTree()
     tree.insert(11)
     tree.insert(10)
     tree.insert(12)
+    tree.insert(13)
     console.log(tree)
+    tree.preOrderTraverseNonRecursion();
   </script>
 </body>
 </html>
