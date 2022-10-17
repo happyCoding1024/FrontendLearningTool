@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遍历JSON</title>
+</head>
+<body>
+  <script>
+    // 使用深度优先遍历，深度优先遍历中比较关键的是遍历子节点然后递归，但是因为子节点有对象还是数组
+    // 无法使用之前树遍历时的children属性去遍历子节点。这个时候我们可以用object.keys()这个方法去实现遍历所有的子节点
+    const json = {
+      a: { 
+        b: {
+          c: 1,
+      }},
+      d: [1, 2]
+    }
+
+    function traverseJson(json, path) {
+      if (!json) return;
+
+      console.log('path === ', path);
+      console.log('json[key] === ', json);
+
+      // 使用Object.keys后使用forEach或map更专业一些，但是注意的是遍历是在回调里面，用retrun并不能终止外部函数
+      Object.keys(json).forEach(key => {
+        traverseJson(json[key], path.concat(key));
+      })
+
+      // 用for循环时return的时候可以终止整个函数
+      // for (key of Object.keys(json)) {
+      //   console.log('path === ', path);
+      //   console.log('json[key] === ', json[key]);
+
+      //   traverseJson(json[key], path.concat(key));
+      // }
+    }
+
+    traverseJson(json, []);
+
+  </script>
+</body>
+</html>

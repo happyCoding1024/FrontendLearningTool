@@ -33,7 +33,12 @@
       postOrderTraverse,
       preOrderTraverse,
       insert,
-      preOrderTraverseNonRecursion
+      preOrderTraverseNonRecursion,
+      min,
+      max,
+      findNode,
+      dfs,
+      bfs,
     })
 
     // 向树中插入一个节点
@@ -61,6 +66,43 @@
         }
       }
     }
+
+    // 深度优先遍历
+    function dfs(callback) {
+      return dfsNode(this.root);
+
+      function dfsNode(node) {
+        callback(node);
+        
+        if (node.left) dfsNode(node.left);
+        if (node.right) dfsNode(node.right);
+      }
+    }
+
+    // 非递归版深度优先遍历
+
+
+
+    // 广度优先遍历
+    // 首先思考使用哪一种数据结构，通过分析得知先进去是先出去的因此很明显想到用队列
+    function bfs(callback) {
+      const queue = [this.root];
+      return bfsNode(this.root);
+
+      function bfsNode(node) {
+        while(queue.length) {
+          const node = queue.shift();
+          callback(node);
+          if (node.left) queue.push(node.left);
+          if (node.right) queue.push(node.right);
+        }
+      }
+    }
+
+
+    // 非递归版广度优先遍历
+
+
 
     // 递归版中序遍历
     function inOrderTraverse (callback) {
@@ -112,14 +154,81 @@
       }
     } 
 
+    // 非递归版中序遍历
+    function inOrderTraverseNonRecursion() {
+
+    }
+
+    // 寻找树中的最小值
+    function min() {
+      let node = this.root;
+      
+      if (!node) return null;
+
+      while(node) {
+        if (node.left) {
+          node = node.left;
+        } else {
+          return node.key;
+        }
+      }
+    }
+
+    // 寻找树中的最大值
+    function max() {
+      let node = this.root;
+
+      if (!node) return null;
+
+      while(node) {
+        if (node.right) {
+          node = node.right;
+        } else {
+          return node.key;
+        }
+      }
+    }
+
+    // 搜索一个特定的值🔍
+    function findNode(key) {
+      return serchNode(this.root, key);
+
+      function serchNode(node, key) {
+        if (!node) return false;
+
+        if (node.key < key) {
+          return serchNode(node.right, key);
+        } else if (node.key > key) {
+          return serchNode(node.left, key);
+        } else {
+          return true;
+        }
+      }
+    }
+
+    // 移除一个节点
+    function remove() {
+      
+      
+      function removeNode() {
+
+      }
+    }
+
     // 测试代码
     const tree = new BinarySearchTree()
     tree.insert(11)
     tree.insert(10)
     tree.insert(12)
     tree.insert(13)
+    tree.insert(9);
     console.log(tree)
-    tree.preOrderTraverseNonRecursion();
+    // tree.preOrderTraverseNonRecursion();
+    // console.log(tree.min());
+    // console.log(tree.max());
+    // console.log('查找节点', tree.findNode(8));
+    // tree.dfs((node) => console.log(node.key));
+    tree.bfs((node) => console.log(node.key));
   </script>
 </body>
 </html>
