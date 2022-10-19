@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>渲染组件树</title>
+</head>
+<body>
+  <script>
+    const tree = {
+      root: 1,
+      children: [
+        {
+          root: 2,
+          children: [
+            {
+              root: 3,
+              children: null
+            }
+          ]
+        }, {
+          root: 4,
+          children: null,
+        }
+      ]
+    }
+
+    const dfs = (node, deep) => {
+      if (!node) return null;
+
+      const elem = document.createElement('div');
+      elem.innerText = `第${deep}层，值是${node.root}`;
+      document.body.appendChild(elem);
+      console.log(`第${deep}层，值是${node.root}`)
+      for (let i = 0; i < node?.children?.length; i++) {
+        dfs(node?.children[i], deep + 1);
+      }
+    }
+
+    dfs(tree, 1);
+  </script>
+</body>
+</html>

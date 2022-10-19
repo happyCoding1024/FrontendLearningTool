@@ -49,6 +49,7 @@
 
     class Graph {
       constructor () {
+        // 这个地方用Set是不是更好一点，因为Set图中的顶点应该是不能重复的
         this.vertices = []
         this.adjList = new Map()
       }
@@ -61,6 +62,7 @@
       toString,
       BFS,
       BFS_,
+      BFS1,
       DFS,
       DFS_
     })
@@ -104,7 +106,29 @@
       return result
     }
 
-    // BFS
+    // 自己写的BFS
+    function BFS1(v, callback) {
+      if (!v) return;
+      // 标识已经遍历过的节点
+      const isVisited = new Map();
+      const queue = [v];
+      // 节点入队列时需要将其标记为已遍历过的节点
+      isVisited.set(v, true);
+
+      while(queue.length) {
+        const vertex = queue.shift();
+        callback(vertex);
+        this.adjList.get(vertex).forEach(item => {
+          if (!isVisited.get(item)) {
+            queue.push(item);
+            isVisited.set(item, true);
+          }
+        })
+      }
+    }
+  
+
+    // BFS书上的
     function BFS (v, callback) {
       const self = this
       const color = initialColor(self.vertices)
@@ -302,13 +326,17 @@
     graph.addEdge('B', 'F')
     graph.addEdge('E', 'I')
 
+    graph.BFS1('A', (u) => {
+      console.log(u)
+    })
+
     // graph.DFS((u) => {
     //   console.log(u)
     // })
 
-    console.log(graph.DFS_(u => {
-      console.log(u)
-    }))
+    // console.log(graph.DFS_(u => {
+    //   console.log(u)
+    // }))
   </script>
 </body>
 </html>
