@@ -64,7 +64,8 @@
       BFS_,
       BFS1,
       DFS,
-      DFS_
+      DFS_,
+      DFS1
     })
 
     // 添加新的顶点
@@ -259,6 +260,28 @@
       }
     }
 
+    // 自己写的DFS,递归
+    function DFS1 (callback) {
+      const isVisited = new Map();
+      // 起始顶点使用第一个顶点
+      const v = this.vertices[0];
+      if (!v) return;
+      isVisited.set(v, true)
+
+      const dfs = (v) => {
+        callback(v);
+
+        this.adjList.get(v).forEach((item) => {
+          if (!isVisited.get(item)) {
+            isVisited.set(item, true);
+            dfs(item);
+          }
+        })
+      }
+
+      dfs(v, callback);
+    }
+
     // 改进的 DFS，可以获取顶点的发现时间，探索时间，前溯点
     function DFS_ (callback) {
       const d = {}
@@ -326,13 +349,13 @@
     graph.addEdge('B', 'F')
     graph.addEdge('E', 'I')
 
-    graph.BFS1('A', (u) => {
-      console.log(u)
-    })
-
-    // graph.DFS((u) => {
+    // graph.BFS1('A', (u) => {
     //   console.log(u)
     // })
+
+    graph.DFS1((u) => {
+      console.log(u)
+    })
 
     // console.log(graph.DFS_(u => {
     //   console.log(u)
