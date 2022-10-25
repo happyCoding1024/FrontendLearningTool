@@ -12,18 +12,133 @@
     /**
      * 最小堆
      */
-    
+    class MinHeap {
+      constructor() {
+        this.heap = [];
+      }
+
+      /**
+       * 插入: 时间复杂度O(logN)，上移最差为堆的层数，树的层数为logN，N为树顶点的数量
+       * 1. 插入尾部
+       * 2. 上移，如果小于父节点那么就和父节点交换，递归这个上移过程
+       */ 
+      insert(value) {
+        this.heap.push(value);
+        const index = this.heap.length - 1;
+        
+        // 上移节点
+        this.shiftUp(index);
+      }
+
+      /**
+       * 上移节点 
+       */ 
+      shiftUp(index) {
+        if (index === 0)  return;
+        const parentIndex = this.getParentIndex(index);
+        if (this.heap[index] < this.heap[parentIndex]) {
+          this.swap(index, parentIndex);
+          this.shiftUp(parentIndex);
+        }
+      }
+      
+      // 获取父节点
+      getParentIndex(index) {
+        return Math.floor((index - 1) / 2); 
+      }
+
+      // 获取左子节点
+      getLeftIndex(index) {
+        return index * 2 + 1;
+      }
+
+      // 获取右子节点
+      getRightIndex(index) {
+        return index * 2 + 2;
+      }
+
+      /**
+       * 交换节点
+       */  
+      swap(index1, index2) {
+        const tmp = this.heap[index1];
+        this.heap[index1] = this.heap[index2];
+        this.heap[index2] = tmp;
+      }
+
+      /**
+       * 删除堆顶：时间复杂度为O(logN)
+       * 
+       * 不能直接将堆顶元素删除，应该令最后一个元素交换堆顶元素维持原有的堆结构，然后对堆顶元素进行下移操作
+       *  
+       */ 
+      deletePeek() {
+        // 交换堆顶和堆尾的元素
+        this.swap(0, this.heap.length - 1);
+
+        // 删除堆尾元素
+        this.heap.pop();
+
+        // 下移
+        this.shiftDown(0);
+      }
+
+      // 下移
+      shiftDown(index) {
+        if (index === this.heap.length - 1) return;
+
+        const leftIndex = this.getLeftIndex(index);
+        const rightIndex = this.getRightIndex(index);
+
+        // 如果父节点比左子节点大，交换两者
+        if (this.heap[index] > this.heap[leftIndex]) {
+          this.swap(index, leftIndex);
+          this.shiftDown(leftIndex);
+        }
+
+        // 如果父节点比右子节点大，交换两者
+        if (this.heap[index] > this.heap[rightIndex]) {
+          this.swap(index, rightIndex);
+          this.shiftDown(rightIndex);
+        }        
+      }
+
+      
+      // 获取堆顶
+      getPeek() {
+        return this.heap[0];
+      }
 
 
+      // 获取堆大小
+      getSize() {
+        return this.heap.length;
+      }
 
+    }
 
+    // 测试代码
+    const minHeap = new MinHeap();
+    // 插入节点
+    minHeap.insert(3);
+    minHeap.insert(2);
+    minHeap.insert(1);
 
-    
+    // 删除节点
+    minHeap.deletePeek();
+  
+    // 栈顶元素
+    minHeap.getPeek();
+
+    // 堆大小
+    minHeap.getSize();
+
 
     /**
      * 最大堆
+     * 
+     * 最大堆和最小堆类似，只是要保证父节点大于等于子节点
      */
-    const foo = 1;
 
      
      
