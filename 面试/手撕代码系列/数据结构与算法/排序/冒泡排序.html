@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冒泡排序</title>
+</head>
+<body>
+  <script>
+    Array.prototype.bubbleSort = function() {
+      for (let i = 0, len = this.length; i < len - 1; i++) {
+        for (let j = 0; j < len - i - 1; j++) {
+          if (this[j] > this[j + 1]) {
+            [this[j], this[j+1]] = [this[j+1], this[j]];
+          }
+        }
+      }s
+    }
+
+    const arr = [5, 4, 3, 2, 1, 6];
+    arr.bubbleSort();
+    console.log(arr);
+  </script>
+</body>
+</html>
