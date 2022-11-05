@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>归并排序</title>
+</head>
+<body>
+
+  <script>
+    // 实现方式 1
+    // Array.prototype.mergeSort1 = function () {
+    //   // 划分数组，分成左右两个，直到每个元素都只有一个元素，然后再进行合并，划分的过程是一个递归
+    //   const mergeSortRec = (arr) => {
+    //     if (arr.length === 1) return arr;
+    //     let left, right;
+
+    //     const len = arr.length;
+    //     const mid = Math.floor(len / 2);
+
+    //     left = arr.slice(0, mid);
+    //     right = arr.slice(mid, len);
+
+    //     // 合并左右数组
+    //     const merge = (left, right) => {
+    //       let il = 0, ir = 0;
+    //       const res = [];
+
+    //       while(il < left.length && ir < right.length) {
+    //         if (left[il] < right[ir]) {
+    //           res.push(left[il++]);
+    //         } else {
+    //           res.push(right[ir++]);
+    //         }
+    //       }
+
+    //       // 只剩下left中还有元素
+    //       while(il < left.length) {
+    //         res.push(left[il++]);
+    //       }
+
+    //       while(ir < right.length) {
+    //         res.push(right[ir++]);
+    //       }
+
+    //       // 改变原数组
+    //       res.forEach((item, index) => this[index] = item);
+    //       return res;
+    //     }
+
+    //     return merge(mergeSortRec(left), mergeSortRec(right));
+    //   }
+
+    //   // 进行归并排序
+    //   mergeSortRec(this);
+    // }
+
+    // 实现方式2
+    Array.prototype.mergeSort2 = function() {
+
+      const res = mergeSortRec(this);
+
+      // 修改原数组
+      res.forEach((item, index) => this[index] = item);
+      
+      function mergeSortRec (arr) {
+        const res = [];
+        const len = arr.length;
+        if (len === 1) return arr;
+
+        // 分，分2的多少次，时间复杂度O(logN)
+        const mid = Math.floor(len / 2);
+        const left = arr.slice(0, mid);
+        const right = arr.slice(mid, len);
+        // mergeSortRec的返回值是排序好的数组
+        const orderLeft = mergeSortRec(left);
+        const orderRight = mergeSortRec(right);
+
+        // 合并左右排序好的数组
+        while(orderLeft.length && orderRight.length) {
+          res.push(orderLeft[0] < orderRight[0] ? orderLeft.shift() : orderRight.shift());
+        }
+
+        while(orderLeft.length) {
+          res.push(orderLeft.shift())
+        }
+
+        while(orderRight.length) {
+          res.push(orderRight.shift());
+        }
+
+        // 返回排序好的数组
+        return res;
+      }
+    }
+
+    const arr = [4, 3, 2, 1];
+    arr.mergeSort2();
+    
+  </script>
+  
+</body>
+</html>

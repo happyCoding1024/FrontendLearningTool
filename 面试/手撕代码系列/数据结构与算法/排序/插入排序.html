@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插入排序</title>
+</head>
+<body>
+  <script>
+    // 我被困住的点是不知道比较出来谁大谁小之后应该如何插入，我的想法是从前向后比较，找到比当前大的就把它插到当前元素之前即可，
+    // 但是问题是如何插入呢，会有覆盖的问题
+    // 还是从后往前比较比较合适，当需要比较的元素比当前元素小的时候，那么就需要进行 arr[j] = arr[--j]的操作，相当于向后移
+    // 因为要挪出一个位置来放需要比较的元素。
+    Array.prototype.insertSort = function () {
+      // 所有的元素都要进行插入的过程，因此下面的for循环中是this.length而不是this.length-1
+      for (let i = 0; i < this.length; i++) {
+        let j = i;
+        temp = this[j];
+        // 不断挪动位置，因为数组的插入需要将要插入的位置后面所有的元素向后移动
+        while(j > 0 && temp < this[j-1]) {
+          this[j] = this[--j];
+        }
+        // j的位置给你空出来了，插入即可
+        this[j] = temp;
+      }
+    }
+
+    const arr = [3, 4, 1, 2];
+
+    arr.insertSort();
+    console.log(123);
+  </script>
+</body>
+</html>

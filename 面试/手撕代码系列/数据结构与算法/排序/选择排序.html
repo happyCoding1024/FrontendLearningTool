@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选择排序</title>
+</head>
+<body>
+  <script>
+    Array.prototype.selectionSort = function() {
+      for (let i = 0, len = this.length; i < len - 1; i++) {
+        let indexMin = i;
+        for (let j = i; j < len; j++) {
+          if (this[j] < this[indexMin]) {
+            indexMin = j;
+          }
+        }
+
+        [this[i], this[indexMin]] = [this[indexMin], this[i]];
+      }
+    }
+
+
+    const arr = [5, 4, 3, 2, 1];
+    arr.selectionSort();
+    console.log(1234);
+  </script>
+</body>
+</html>
