@@ -10,51 +10,51 @@
 
   <script>
     // 实现方式 1
-    // Array.prototype.mergeSort1 = function () {
-    //   // 划分数组，分成左右两个，直到每个元素都只有一个元素，然后再进行合并，划分的过程是一个递归
-    //   const mergeSortRec = (arr) => {
-    //     if (arr.length === 1) return arr;
-    //     let left, right;
+    Array.prototype.mergeSort1 = function () {
+      // 划分数组，分成左右两个，直到每个元素都只有一个元素，然后再进行合并，划分的过程是一个递归
+      const mergeSortRec = (arr) => {
+        if (arr.length === 1) return arr;
+        let left, right;
 
-    //     const len = arr.length;
-    //     const mid = Math.floor(len / 2);
+        const len = arr.length;
+        const mid = Math.floor(len / 2);
 
-    //     left = arr.slice(0, mid);
-    //     right = arr.slice(mid, len);
+        left = arr.slice(0, mid);
+        right = arr.slice(mid, len);
 
-    //     // 合并左右数组
-    //     const merge = (left, right) => {
-    //       let il = 0, ir = 0;
-    //       const res = [];
+        // 合并左右数组
+        const merge = (left, right) => {
+          let il = 0, ir = 0;
+          const res = [];
 
-    //       while(il < left.length && ir < right.length) {
-    //         if (left[il] < right[ir]) {
-    //           res.push(left[il++]);
-    //         } else {
-    //           res.push(right[ir++]);
-    //         }
-    //       }
+          while(il < left.length && ir < right.length) {
+            if (left[il] < right[ir]) {
+              res.push(left[il++]);
+            } else {
+              res.push(right[ir++]);
+            }
+          }
 
-    //       // 只剩下left中还有元素
-    //       while(il < left.length) {
-    //         res.push(left[il++]);
-    //       }
+          // 只剩下left中还有元素
+          while(il < left.length) {
+            res.push(left[il++]);
+          }
 
-    //       while(ir < right.length) {
-    //         res.push(right[ir++]);
-    //       }
+          while(ir < right.length) {
+            res.push(right[ir++]);
+          }
 
-    //       // 改变原数组
-    //       res.forEach((item, index) => this[index] = item);
-    //       return res;
-    //     }
+          // 改变原数组
+          res.forEach((item, index) => this[index] = item);
+          return res;
+        }
 
-    //     return merge(mergeSortRec(left), mergeSortRec(right));
-    //   }
+        return merge(mergeSortRec(left), mergeSortRec(right));
+      }
 
-    //   // 进行归并排序
-    //   mergeSortRec(this);
-    // }
+      // 进行归并排序
+      mergeSortRec(this);
+    }
 
     // 实现方式2
     Array.prototype.mergeSort2 = function() {

@@ -7,6 +7,40 @@
   <title>快速排序</title>
 </head>
 <body>
-  
+  <script>
+    Array.prototype.quickSort = function () {
+
+      const quickSortRec = (arr, left, right) => {
+
+        // 找主元，移动，使左边的数比主元小，右边的数比主元大
+        const pivot = arr[Math.floor((left + right) / 2)];
+        let il = left;
+        let ir = right;
+        while(il <= ir) {
+          while(arr[il] < pivot) il++;
+          while(arr[ir] > pivot) ir--;
+          if (il <= ir) {
+            [arr[il], arr[ir]] = [arr[ir], arr[il]];
+            il++;
+            ir--;
+          }
+
+        // 递归，注意递归终止条件
+        if (left < il - 1) {
+          quickSortRec(arr, left, il - 1);
+        }
+
+        if (right > il) {
+          quickSortRec(arr, il, right);
+        }
+        }
+      }
+
+      quickSortRec(this, 0, this.length - 1);
+    }
+
+    const arr = [5, 4, 3, 2, 1, 8, 10, 34];
+    arr.quickSort();
+  </script>
 </body>
 </html>
