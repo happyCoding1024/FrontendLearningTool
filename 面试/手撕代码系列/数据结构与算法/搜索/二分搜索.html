@@ -8,15 +8,50 @@
 </head>
 <body>
   <script>
-    Array.prototype.sequentialSearch = function (item) {
-      for (let i = 0, len = this.length; i < len; i++) {
-        if (item === this[i]) return i;
+    // 非递归版
+    Array.prototype.binarySearch1 = function (item) {
+      let low = 0;
+      let high = this.length - 1;
+      let mid;
+      
+      while(low <= high) {
+        mid = Math.floor(low + high);
+        if (item < this[mid]) {
+          high = mid - 1;
+        } else if(item > this[mid]) {
+          low = mid + 1;
+        } else {
+          return mid;
+        }
       }
+
       return -1;
     }
 
+
+    // 递归版
+    Array.prototype.binarySearch2 = function (item) {
+      
+      const rec = (arr) => {
+        const mid = Math.floor(arr.length / 2);
+
+        if (arr[mid] === item) return true;
+
+        if (arr[mid] > item) {
+          return rec(arr.slice(0, mid));
+        } else {
+          return rec(arr.slice(mid, arr.length))
+        }
+
+        return false;
+      }
+
+      return rec(this);
+    }
+
     const arr = [1, 2, 3, 4];
-    arr.sequentialSearch(3);
+    arr.sort((a, b) => a - b);
+    arr.binarySearch1(4);
   </script>
 </body>
 </html>
