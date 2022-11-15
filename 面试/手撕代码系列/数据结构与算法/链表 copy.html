@@ -34,61 +34,37 @@
       reverseList
     })
 
-    // 增加节点
     function append (element) {
-      let node = new Node(element)
-      let current
-      // 如果是列表中的第一个节点
-      if (this.head === null) {
-        this.head = node
-      } else {
-        current = this.head
-        // 循环链表，直到找到最后一项
-        while (current.next) {
-          current = current.next
-        }
-        // 找到链表中的最后一项
-        current.next = node
+      const newNode = new Node(element);
+      const current = this.head;
+
+      while(current) {
+        current = current.next;        
       }
-      this.length++
+
+      current = newNode;
+      this.length++;
     }
 
-    // 从指定位置移除节点
-    function removeAt (position) {
-      let current = this.head,
-        previous,
-        index = 0
-      // 检查合法边界
-      if (position >= 0 && position < this.length) {
-        // 移除的是链表中的第一个元素
-        if (position === 0) {
-          if (this.length === 1) {
-            this.head = null
-            this.tail = null
-          } else {
-            this.head = current.next
-            this.head.prev = null
-          }
-          // 移除的是最后一个元素
-        } else if (position === this.length - 1) {
-          current = this.tail
-          this.tail = current.prev
-          this.tail.next = null
-          // 移除的是中间的元素
-        } else {
-          while (index++ < position) {
-            current = current.next
-            previous = current.prev
-          }
-          previous.next = current.next
-          current.next.prev = previous
-        }
-        this.length--
-        return true
-      } else {
-        return false
-      }
-    }
+
+    // 增加节点
+    // function append (element) {
+    //   let node = new Node(element)
+    //   let current
+    //   // 如果是列表中的第一个节点
+    //   if (this.head === null) {
+    //     this.head = node
+    //   } else {
+    //     current = this.head
+    //     // 循环链表，直到找到最后一项
+    //     while (current.next) {
+    //       current = current.next
+    //     }
+    //     // 找到链表中的最后一项
+    //     current.next = node
+    //   }
+    //   this.length++
+    // }
 
     // 移除特定位置的节点
     // function removeAt (position) {
@@ -119,6 +95,32 @@
     //     return null
     //   }
     // }
+
+    // 删除指定位置的节点
+    function removeAt(position) {
+      const current = this.head;
+      let index = 0;
+      let previous = null;
+
+      // 不合法位置返回null
+      if (position < -1 || position > this.length - 1) return null;
+      
+      if (position === 0) {
+        this.head == current.next;
+        this.length--;
+        return current;
+      } else {
+        while (current.next) {
+          index++;
+          previous = current;
+          if (position === index) {
+            previous.next = current.next.next;
+            this.length--;
+            return current.next;
+          }
+        }
+      }
+    }
 
     // 移除指定元素的节点
     function remove(element) {
@@ -206,10 +208,9 @@
     list.append(4)
     list.append(5)
     // list.insert(2, 10)
-    list.removeAt(1);
-    console.log('list === ', list)
-    // list.reverseList()
-    // console.log(list)
+    console.log(list)
+    list.reverseList()
+    console.log(list)
     
     /** ************* 双向链表 ****************/
     // 双向链表中的节点
@@ -282,6 +283,42 @@
     //   }
     // }
 
+    // // 从指定位置移除节点
+    // function removeAt (position) {
+    //   let current = this.head,
+    //     previous,
+    //     index = 0
+    //   // 检查合法边界
+    //   if (position >= 0 && position < this.length) {
+    //     // 移除的是链表中的第一个元素
+    //     if (position === 0) {
+    //       if (this.length === 1) {
+    //         this.head = null
+    //         this.tail = null
+    //       } else {
+    //         this.head = current.next
+    //         this.head.prev = null
+    //       }
+    //       // 移除的是最后一个元素
+    //     } else if (position === this.length - 1) {
+    //       current = this.tail
+    //       this.tail = current.prev
+    //       this.tail.next = null
+    //       // 移除的是中间的元素
+    //     } else {
+    //       while (index++ < position) {
+    //         current = current.next
+    //         previous = current.prev
+    //       }
+    //       previous.next = current.next
+    //       current.next.prev = previous
+    //     }
+    //     this.length--
+    //     return true
+    //   } else {
+    //     return false
+    //   }
+    // }
     // // 测试代码
     // const doubleList = new DoubleLinkedList()
     // doubleList.insert(0, 1)
@@ -290,6 +327,7 @@
     // doubleList.removeAt(1)
 
     // console.log(doubleList)
+
   </script>
 </body>
 </html>
