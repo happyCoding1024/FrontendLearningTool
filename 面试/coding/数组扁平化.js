@@ -1,4 +1,5 @@
-function arrayFlatten (arr) {
+// 递归
+function arrayFlatten1 (arr) {
   const newFlattenArr = [];
 
   arr.forEach(element => {
@@ -12,6 +13,15 @@ function arrayFlatten (arr) {
   return newFlattenArr;
 }
 
+// while + 扩展运算符
+function arrayFlatten2 (arr) {
+  while (arr.some(item => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+
+  return arr;
+}
+
 const arr = [1, 2, [3, [4, [5, 6]]]];
 
-console.log(arrayFlatten(arr));
+console.log(arrayFlatten2(arr));

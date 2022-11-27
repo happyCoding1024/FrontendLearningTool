@@ -3,21 +3,21 @@ const arr = [1, 2, 3];
 /**
  * 实现reduce 方法
  */
-Array.prototype.reduce1 = function (fn) {
+Array.prototype.reduce1 = function (fn, initialData) {
   const arr = this;
-  let pre = arr[0];
+  let res = initialData;
 
-  for (let i = 1, len = arr.length; i < len; i++) {
+  for (let i = 0, len = arr.length; i < len; i++) {
     cur = arr[i];
-    pre = fn(pre, cur);
+    res = fn(res, cur);
   }
 
-  return pre;
+  return res;
 }
 
 const res = arr.reduce1((pre, cur) => {
   return pre + cur;
-})
+}, 0)
 
 console.log(res);
 

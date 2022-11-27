@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      height: 1000px;
+      width: 200px;
+      background-color: red;
+    }
+  </style>
+  <title>节流</title>
+</head>
+<body>
+  <div class="container"></div>
+
+  <script>
+    // 节流
+    function throttle(cb, delay) {
+      let isValid = false;
+
+      return function (...args) {
+        if (isValid) return;
+
+        isValid = true
+        setTimeout(() => {
+          cb(args);
+          isValid = false;
+        }, delay);
+      }
+    }
+
+    const div = document.getElementsByClassName('container')[0];
+    document.addEventListener('scroll', throttle((e) => {
+      console.log(e, 123)
+    }, 2000))
+  </script>
+</body>
+</html>

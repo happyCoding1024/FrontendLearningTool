@@ -35,7 +35,43 @@
         requestAnimationFrame(animate)
       }
     }
-    animate() 
+    // animate()
+    
+    // 模拟setTimeout
+    function mockSettimeout(cb, timer) {
+      let count = 0;
+
+      const rec = () => {
+        if (count * 16.7 > timer) {
+          cb();
+          cancelAnimationFrame(rec);
+        } else {
+          requestAnimationFrame(rec);
+        }
+        count++;
+      }
+
+      rec();
+    }
+
+    mockSettimeout(() => {
+      console.log('111')
+    }, 5000);
+
+    // 利用setTime模拟setInterval
+    function mockSetInterval(cb, timer) {
+      const rec = () => {
+        setTimeout(() => {
+          cb();
+          rec();
+        }, timer)
+      }
+      rec();
+    }
+
+    mockSetInterval(() => {
+      console.log('mockSetInterval')
+    }, 3000);
   </script>
   
 </body>
