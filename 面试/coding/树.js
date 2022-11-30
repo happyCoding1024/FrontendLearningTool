@@ -142,10 +142,84 @@ function getMaxArrInPerLevel(tree) {
   return res;
 }
 
+// 二叉树的所有路径
+function getAllPath (tree) {
+  if (!tree) return;
+
+  const res = [];
+
+  rec(tree, [tree.val]);
+
+  function rec (node, path) {
+    if (!node) return;
+
+    if (!node.left && !node.right) {
+      res.push(path);
+    }
+
+    if (node.left) {
+      rec(node.left, path.concat(node.left.val));
+    }
+
+    if (node.right) {
+      rec(node.right, path.concat(node.right.val));
+    }
+  }
+
+  return res.map((item, index) => item.join('=>'));
+}
+
+// 另一棵树的子树
+function isSubTree (root, subRoot) {
+  let isSame = true;
+  const sameRoot = [];
+  rec(root);
+  
+  function rec (node) {
+    if (!node) return;
+
+    if (node.val === subRoot.val) {
+      sameRoot.push(node);
+    }
+    
+    if (node.left) {
+      rec(node.left);
+    }
+
+    if (node.right) {
+      rec(node.right);
+    } 
+  }
+
+  function isSameTree(node1, node2) {
+    if (!node1 || !node2 ) return;
+
+    if (node1.val !== node2.val) {
+      isSame = false;
+    }
+
+    if (node1.left && node2.left) {
+      dfs(node1.left, node2.left);
+    }
+
+    if (node1.right && node2.right) {
+      dfs(node1.right, node2.right);
+    }
+  }
+
+  for (const node of sameRoot) {
+    isSameTree(node, subRoot);
+  }
+
+  return isSame;
+}
+
+
 
 
 // DFS(tree);
 // BFS(tree);
 // preOrderTraverse(tree);
-console.log(getMaxArrInPerLevel(tree));
+// console.log(getMaxArrInPerLevel(tree));
+console.log(getAllPath(tree));
 // console.log(getMaxDepth(tree));
