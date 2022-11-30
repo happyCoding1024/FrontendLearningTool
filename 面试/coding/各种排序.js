@@ -118,3 +118,41 @@ const arr = [3, 4, 6, 2, 1];
 arr.quickSort();
 console.log(arr);
 
+
+Array.prototype.quickSort1 = function () {
+  const arr = this;
+  rec(0, arr.length - 1);
+  
+  function rec (left, right) {
+    // 设置主元
+    const pivot = arr[Math.floor((left + right) / 2)];
+
+    // 左边的元素比主元小，右边的元素比主元大
+    let il = left;
+    let ir = right;
+
+    while (il < ir) {
+      while(arr[il] < pivot) il++;
+      while(arr[ir] > pivot) ir--;
+      if (il < ir) {
+        [arr[il], arr[ir]] = [arr[ir], arr[il]]
+        il++;
+        ir--;
+      }
+    }
+
+    if (left < il) {
+      rec(left, il);
+    }
+
+    if (right > il) {
+      rec(il+1, right);
+    } 
+  }
+}
+
+const array = [5,3,1]
+
+array.quickSort1();
+
+console.log(array)
