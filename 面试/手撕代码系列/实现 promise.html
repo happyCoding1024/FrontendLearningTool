@@ -159,14 +159,45 @@
       })
     }
 
-    // resolve 方法
-    function resolve () {
+    // allSettled
+    function allSettled (...args) {
+      const promiseArr = args;
+      const res = [];
 
+      return new Promise((resolve, reject) => {
+        for (const promise of promiseArr) {
+          promise.then((data) => {
+            res.push(data);
+          }).catch(e => {
+            res.push(e);
+          })
+        }
+
+        resolve(res);
+      })
     }
 
-    // reject 方法
-    function reject () {
+    // any
+    function any (...args) {
+      const promiseArr = args;
+      const resolveArr = [];
+      const rejectArr = [];
 
+      return new Promise((resolve, reject) => {
+        for (let promise of promiseArr) {
+          promise.then(data => {
+            resolveArr.push(data);
+          }).catch(e => {
+            rejectArr.push(e);
+          })
+
+          if (resolveArr.length) {
+            resolve(resolveArr[0]);
+          } else {
+            reject(new AggregateError(rejectArr));
+          }
+        }
+      }); 
     }
 
     // 测试代码
