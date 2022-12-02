@@ -2,7 +2,7 @@
  * 使用Set
  */
 function uniqueArray1 (arr) {
-  return [...new Set([...arr])];
+  return [...new Set(arr)]
 }
 
 // 利用object key的唯一性
