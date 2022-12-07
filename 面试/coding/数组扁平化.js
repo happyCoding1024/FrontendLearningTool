@@ -4,7 +4,7 @@ function arrayFlatten1 (arr) {
 
   arr.forEach(element => {
     if (Array.isArray(element)) {
-      newFlattenArr.push(...arrayFlatten(element));
+      newFlattenArr.push(...arrayFlatten1(element));
     } else {
       newFlattenArr.push(element);
     }

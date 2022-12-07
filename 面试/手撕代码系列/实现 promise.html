@@ -160,20 +160,42 @@
     }
 
     // allSettled
+    // function allSettled (...args) {
+    //   const promiseArr = args;
+    //   const res = [];
+
+    //   return new Promise((resolve, reject) => {
+    //     // 这种写法promise返回的结果没有按照原来的顺序
+    //     for (const promise of promiseArr) {
+    //       promise.then((data) => {
+    //         res.push(data);
+    //       }).catch(e => {
+    //         res.push(e);
+    //       })
+    //     }
+
+    //     resolve(res);
+    //   })
+    // }
+
     function allSettled (...args) {
       const promiseArr = args;
       const res = [];
+      let count = 0;
 
       return new Promise((resolve, reject) => {
-        for (const promise of promiseArr) {
+        promiseArr.forEach((promise, index) => {
           promise.then((data) => {
-            res.push(data);
-          }).catch(e => {
-            res.push(e);
-          })
-        }
+            res[index] = data;
+            count++;
 
-        resolve(res);
+            if (count === promiseArr.length) {
+              resolve(res);
+            }
+          }).catch(e => {
+            reject(e);
+          })
+        });
       })
     }
 
