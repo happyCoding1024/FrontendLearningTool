@@ -7,18 +7,28 @@
   <title>防抖</title>
 </head>
 <body>
+  <p>防抖</p>
+  搜索：<input id="search" />
   <script>
-    function debounce(fn, delay) {
+    function debounce(fn, delay = 200) {
       let timer = null;
-      return function () {
+      return function (...args) {
         if (timer) clearTimeout(timer);
-
         timer = setTimeout(function () {
-          fn.apply(this, arguments);
+          fn.apply(this, args);
           timer = null; 
         }, delay);
       }
     }
+
+    const handleSearch = (e) => {
+      console.log('搜索被触发了，当前搜索的内容是 e === ', e)
+    }
+
+    const searchElem = document.getElementById('search')
+    searchElem.addEventListener('keyup', debounce((e) => {
+      handleSearch(e)
+    }), 2000)
   </script>
 </body>
 </html>
