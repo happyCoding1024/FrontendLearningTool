@@ -11,7 +11,6 @@
  * @return {number}
  */
 var smallestRangeI = function(nums, k) {
-
 };
 // @lc code=end
 

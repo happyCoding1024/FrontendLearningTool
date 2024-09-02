@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    if (!list.length) return
+    const arr = []
+
+    for (let i = 0; i < 2; i++) {
+      if (typeof list[0] === 'function') {
+        arr.push()
+      }
+    }
+
+    while(list.length) {
+      if (arr.length === 2) {
+        console.log('已经超过最大值，请等待')
+        for (const [item, index] of arr.entries()) {
+          if (!item.flag) {
+            item.fn().finally(() => {
+              arr.splice(index)
+              arr.push(list[0])
+            })
+            item.flag = true
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
