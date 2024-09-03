@@ -7,26 +7,18 @@
   <title>节流</title>
 </head>
 <body>
-  <div id="container">hello</div>
-  <div>hello</div>
-  <div>hello</div>
-  <div>hello</div>
-  <div>hello</div>
-  <div>hello</div>
-  <div>hello</div>
+  <div id="container" draggable="true" style="width: 100px; height: 100px; background-color: antiquewhite;">hello</div>
 
   <script>
-
     // 写法 1
     function throttle1(fn, duration) {
       let timer = null;
-      return function () {
-        console.log('function this === ', this);
+      return function() {
         if (timer) {
           return;
         }
-
         timer = setTimeout(() => {
+          // 使用arguments外面return后面就不用要箭头函数
           fn.apply(this, arguments);
           timer = null; 
         }, duration);
@@ -50,11 +42,24 @@
       }
     }
 
-    const cbThrottle = throttle2(function () {
-      console.log(this);
-    }, 1000);
+    const containerElem = document.getElementById("container")
+    containerElem.addEventListener('drag', throttle2((e) => {
+      console.log('回调中的this === ', this)
+      console.log("拖动事件 e === ", e)
+    }))
 
-    document.addEventListener('scroll', cbThrottle);
+    function throttle(fn, duration) {
+      let timer = null
+
+      return function () {
+        if (timer) return
+
+        timer = setTimeout(() => {
+          fn.apply(this, arguments)
+          timer = null
+        })
+      }
+    }
   </script>
 </body>
 </html>
