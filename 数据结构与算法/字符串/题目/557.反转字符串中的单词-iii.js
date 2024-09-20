@@ -10,7 +10,14 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-  
+  let result = ''
+  let strArr = []
+
+  for (const item of s.split(' ')) {
+    strArr.push(item.split('').reverse().join(''))
+  }
+  result = strArr.join(' ')
+  return result;
 };
 // @lc code=end
 
